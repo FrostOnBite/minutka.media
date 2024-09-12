@@ -812,3 +812,8 @@ div.a2a_full_footer {display:none;}
     overflow: visible;
     display: block
 }
+
+m-logo {
+    display: block;
+    width: 9.375em;
+}
