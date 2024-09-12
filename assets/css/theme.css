@@ -658,7 +658,7 @@ footer {
 	display:none !important;
 }
 .excerpt {
-    color: rgb(255, 255, 255);
+    color: rgba(0, 0, 0, 0.536);
     margin-top:10px;
 }
 article {
