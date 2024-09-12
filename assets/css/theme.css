@@ -808,3 +808,7 @@ div.a2a_full_footer {display:none;}
 	 }
  }
  
+ .icon svg,icon svg {
+    overflow: visible;
+    display: block
+}
