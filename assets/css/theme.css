@@ -361,6 +361,9 @@ a.text-dark:hover {
 .bg-white {
 	fill:#fff !important;
 }
+.bg-black {
+	fill:#000 !important;
+}
 .bg-purple {
 	fill:#ad6edd !important;
 }
