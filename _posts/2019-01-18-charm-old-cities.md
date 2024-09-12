@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Could we reinvent the charm of old cities"
+title:  ""Владимир Владимирович, извините, что перебиваю": ушел из жизни Николай Сванидзе, известный своим мужеством в публичных спорах с Путиным."
 author: jane
 categories: [ Jekyll, tutorial ]
 image: assets/images/home.jpg
 tags: [sticky]
 ---
 
-Bucharest’s history alternated periods of development and decline from the early settlements in antiquity until its consolidation as the national capital of Romania late in the 19th century. First mentioned as the “Citadel of București” in 1459, it became the residence of the famous Wallachian prince Vlad III the Impaler.
+Историк и телеведущий Николай Сванидзе скончался. В последние годы своей жизни он активно критиковал власть, что в итоге привело к его отставке с поста в Совете при президенте по правам человека в 2022 году. Минутка собрала его последние публичные выступления, чтобы увековечить память о его вкладе и принципиальной позиции.
 
 #### Early 18th century woodcut of Bucharest
 
