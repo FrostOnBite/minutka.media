@@ -1,13 +1,10 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Ветеран войны, ранее осужденный за избиение и лишение свободы семи женщин, теперь работает школьным учителем."
 categories: [ Jekyll ]
-image: assets/images/demo1.jpg
+image: assets/images/31.jpg
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
-
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
-
+Среди первых выпускников программы по переобучению бывших участников войны в Украине оказался 51-летний Андрей Шинягин, который стал учителем. До войны Шинягин отсидел срок за то, что вместе с сообщниками под видом сотрудников СВР избил и лишил свободы нескольких женщин. Этот факт подтверждается анализом фотографий, опубликованных центром военно-патриотического воспитания «Вершина» и фондом «Защитники Отечества». Теперь выпускники программы будут преподавать в школах курс «Основы безопасности и защиты Родины».
 Jekyll also offers powerful support for code snippets:
 
 {% highlight ruby %}
