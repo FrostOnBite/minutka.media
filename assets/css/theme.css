@@ -835,9 +835,6 @@ m-logo {
 .svg-container {
 	width: 300px;
 	height: 150px;
-	resize: both;
-	overflow: auto;
-	border: 1px dashed #aaa;
    }
    
    .svg-container, svg {
