@@ -840,7 +840,7 @@ m-logo {
 	border: 1px dashed #aaa;
    }
    
-   svg {
+   .svg-container, svg {
 	width: 95%;
 	height: 95%;
    }
