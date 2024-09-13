@@ -831,3 +831,16 @@ m-logo {
 .excerpt-b{
 	color: #fff;
 }
+
+.svg-container {
+	width: 300px;
+	height: 150px;
+	resize: both;
+	overflow: auto;
+	border: 1px dashed #aaa;
+   }
+   
+   svg {
+	width: 95%;
+	height: 95%;
+   }
