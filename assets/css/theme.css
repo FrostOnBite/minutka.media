@@ -849,3 +849,33 @@ div.a2a_full_footer {display:none;}
     -webkit-transition: all .6s ease; /* Fade to color for Chrome and Safari */
     -webkit-backface-visibility: hidden; /* Fix for transition flickering */
 }
+
+.announcement-bar {
+    width: 100%;
+
+}
+
+.announcement-animation {
+    margin-left: -200px;
+    animation: announcement 12s linear;
+    animation-fill-mode:none;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    white-space: nowrap;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes announcement{
+    0% {
+        margin-left: 0px;
+    }
+    40% {
+        margin-left: 800px;
+    }
+    60%{
+        margin-left: 800px;
+    }
+    100% {
+        margin-left: 2000px;
+    }
+}
