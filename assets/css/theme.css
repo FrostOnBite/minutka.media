@@ -850,12 +850,9 @@ div.a2a_full_footer {display:none;}
     -webkit-backface-visibility: hidden; /* Fix for transition flickering */
 }
 
-.announcement-bar {
+.marquee {
     width: 100%;
 	color: #fff;
-}
-
-.announcement-animation {
 }
 
 .feedEkList {
