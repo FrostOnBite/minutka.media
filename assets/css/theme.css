@@ -841,3 +841,8 @@ div.a2a_full_footer {display:none;}
 	width: 95%;
 	height: 95%;
    }
+
+.text-bg-secondary {
+    color: #fff !important;
+    background-color: #f4f4f4 !important;
+}
