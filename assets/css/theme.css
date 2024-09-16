@@ -857,7 +857,7 @@ div.a2a_full_footer {display:none;}
 
 .announcement-animation {
     margin-left: -200px;
-    animation: announcement 12s linear;
+    animation: announcement 16s linear;
     animation-fill-mode:none;
     animation-iteration-count: infinite;
 	/* animation-delay: 2s;*/
@@ -869,11 +869,17 @@ div.a2a_full_footer {display:none;}
     0% {
         margin-left: 0px;
     }
+	20% {
+        margin-left: 400px;
+    }
     40% {
-        margin-left: 200px;
+        margin-left: 800px;
     }
     60%{
-        margin-left: 800px;
+        margin-left: 1200px;
+    }
+	60%{
+        margin-left: 1600px;
     }
     100% {
         margin-left: 2000px;
