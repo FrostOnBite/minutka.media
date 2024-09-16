@@ -881,6 +881,7 @@ div.a2a_full_footer {display:none;}
     }
 }
 
-.feedEkList li{
-	display: inline;
+.feedEkList {
+	display:flex;  
+  list-style:none;
   }
