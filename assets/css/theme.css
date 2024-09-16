@@ -866,20 +866,12 @@ div.a2a_full_footer {display:none;}
 
 
 	.marquee {
-		background-color: #a855f7;
-		border-top: 1px solid #000000;
+		width: 100%;
 		color: #ffffff;
-		font-family: var(--font-heading);
-		font-feature-settings: unset;
-	
-		font-size: 18px;
-		overflow: hidden;
 		padding: 12px 0;
 	}
-	.marquee--long { 
-		font-size: 14px;
-	}
-	.marquee span {   
+
+	.marquee li {   
 		display: inline-block;
 		white-space: nowrap;
 		color: #ffffff;
