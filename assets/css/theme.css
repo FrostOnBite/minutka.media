@@ -857,7 +857,6 @@ div.a2a_full_footer {display:none;}
     text-align: center;
     margin: 0 auto;
     width: 100%;
-    height: 30px; /* This is required, adjust as needed */
     display: flex;
     align-items: center;
     white-space: nowrap;
