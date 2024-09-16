@@ -1,7 +1,7 @@
 <div class="mb-5 justify-content-between main-loop-card">
 	{% if post.image %}
 	<a href="{{site.baseurl}}{{post.url}}">
-		<div class="w-100 p-4 d-md-block" style="background-size:cover;background-image:url({% if post.image contains "://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %});">	
+		<div class="w-100 p-4 d-md-block original example-clip" style="background-size:cover;background-image:url({% if post.image contains "://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %});">	
 		</div>
 	</a>
 {% endif %}
