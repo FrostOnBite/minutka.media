@@ -850,10 +850,38 @@ div.a2a_full_footer {display:none;}
     -webkit-backface-visibility: hidden; /* Fix for transition flickering */
 }
 
+
 .announcement-bar {
-    width: 100%;
-	color: #fff;
+	width: 100%;
+    color: #ffffff;
+    overflow: hidden;
 }
+
+.announcement-animation {   
+    display: inline-block;
+    white-space: nowrap;
+    color: #ffffff;
+    width: var(--tw);
+
+    text-shadow: var(--tw) 0 currentColor, 
+                 calc(var(--tw) * 2) 0 currentColor, 
+                 calc(var(--tw) * 3) 0 currentColor,
+                 calc(var(--tw) * 4) 0 currentColor,
+                 calc(var(--tw) * 5) 0 currentColor,
+                 calc(var(--tw) * 6) 0 currentColor,
+                 calc(var(--tw) * 7) 0 currentColor;
+
+    will-change: transform;
+    animation: marquee var(--ad) linear infinite;
+    animation-play-state: running;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+
 
 .feedEkList {
 	display:flex;  
