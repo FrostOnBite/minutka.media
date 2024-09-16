@@ -26,9 +26,6 @@
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/FeedEk/3.2.0/js/FeedEk.min.js"></script>
-
-
 
     {% include tracking-header.html %}
 
@@ -90,6 +87,17 @@
     <script src="/assets/js/theme.js"></script>
 
     <script async src="https://thetruestory.news/widget-top.iife.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/FeedEk/3.2.0/js/FeedEk.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+        $('#divRss').FeedEk({
+        FeedUrl : 'https://www.mijn-eigen-website.nl/rss-mijn-eigen-website.xml',
+        MaxCount : 5,
+        ShowDesc : false,
+        ShowPubDate : true
+        }); }); </script>
 
     <!-- Footer -->
     <footer class="bg-black border-top p-3 text-white small">
