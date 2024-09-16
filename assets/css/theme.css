@@ -850,10 +850,20 @@ div.a2a_full_footer {display:none;}
     -webkit-backface-visibility: hidden; /* Fix for transition flickering */
 }
 
+
+
 .marquee {
-    width: 100%;
-	color: #fff;
-}
+	overflow: hidden;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+	display: flex;
+  }
+  
+  .marquee h1{
+	font-size: 5em;
+	white-space: nowrap;
+	text-transform: uppercase
+  }
 
 .feedEkList {
 	display:flex;  
