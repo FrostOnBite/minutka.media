@@ -885,3 +885,7 @@ div.a2a_full_footer {display:none;}
 	display:flex;  
   list-style:none;
   }
+
+.feedEkList .itemTitle{
+  padding: 0 10px;
+}
