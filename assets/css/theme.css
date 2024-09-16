@@ -856,7 +856,7 @@ div.a2a_full_footer {display:none;}
 }
 
 .announcement-animation {
-    margin-left: -200px;
+    margin-left: -400px;
     animation: announcement 16s linear;
     animation-fill-mode:none;
     animation-iteration-count: infinite;
