@@ -52,13 +52,9 @@ description: "A great Jekyll theme developed by Sal @wowthemesnet."
                     <h2 class="mb-2 h6 font-weight-bold">
                     <a class="text-light" href="{{site.baseurl}}{{second_post.url}}">{{ second_post.title }}</a>
                     </h2>
-                    <small class="d-block text-muted">
-                        In <span class="catlist">
-                        {% for category in second_post.categories %}
-                        <a class="text-capitalize text-muted smoothscroll" href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a><span class="sep">, </span>
-                        {% endfor %}
-                        </span>                   
-                    </small>
+                    <p class="excerpt-b">
+                        {{ second_post.excerpt | strip_html | strip_newlines | truncate: 136 }}
+                    </p>
                     <small class="text-muted">
                         {{ second_post.date | date: '%b %d, %Y' }}
                     </small>
