@@ -5,6 +5,9 @@
 	<img class="w-100" src="{% if post.image contains "://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %}" alt="{{ post.title }}">
 	</a>
 	</div>
+
+	<div class="col-md-6 d-none d-md-block pr-0" style="background-size:cover;background-image:url({% if post.image contains "://" %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %});">	
+	</div>
 {% endif %}
 <div class="pr-3">
 	<h2 class="mb-1">
