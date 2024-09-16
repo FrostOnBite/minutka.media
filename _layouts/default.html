@@ -105,7 +105,7 @@
 
 <script type="text/javascript">
         function initializeMarquee() {
-    createMarqueeContainer('latest-news');
+    createMarqueeContainer('announcement-bar');
     rotateMarquee(marqueeContainers);
 }
 
@@ -121,9 +121,9 @@ const marqueeContainers = [];
 
 function createMarqueeContainer(id) {
     const container = document.getElementById(id);
-    const itemWidth = getObjectWidth(container.getElementsByTagName("span")[0]) + 5;
+    const itemWidth = getObjectWidth(container.getElementsByTagName("li")[0]) + 5;
     const fullWidth = getObjectWidth(container);
-    const textContent = container.getElementsByTagName("span")[0].innerHTML;
+    const textContent = container.getElementsByTagName("li")[0].innerHTML;
     container.innerHTML = "";
     const height = container.style.height;
 
