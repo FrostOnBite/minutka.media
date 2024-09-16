@@ -880,3 +880,7 @@ div.a2a_full_footer {display:none;}
         margin-left: 2000px;
     }
 }
+
+.feedEkList li{
+	display: inline;
+  }
