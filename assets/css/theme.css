@@ -876,7 +876,7 @@ div.a2a_full_footer {display:none;}
     animation-play-state: running;
 }
 
-@keyframes marquee {
+@keyframes announcement-animation {
     0% { transform: translateX(0); }
     100% { transform: translateX(-100%); }
 }
