@@ -872,3 +872,9 @@ div.a2a_full_footer {display:none;}
 .feedEkList .itemTitle{
   padding: 0 20px;
 }
+
+.icon-svg{
+	color: #fff;
+	width: 20px; 
+	height: 20px;
+}
