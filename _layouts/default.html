@@ -110,8 +110,9 @@
 
 
     <script>
+        var relativeTime = require("dayjs/plugin/relativeTime");
         dayjs.extend(relativeTime);
-        
+
         var date = Date.parse(document.getElementById("postedon").getAttribute("datetime"));
         document.getElementById("postedago").innerHTML = dayjs().to(dayjs("date"));
     </script>
