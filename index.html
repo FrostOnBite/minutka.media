@@ -29,7 +29,7 @@ description: "A great Jekyll theme developed by Sal @wowthemesnet."
             {{ latest_post.date | date: '%b %d, %Y' }}
         </small>
 
-        <time id="postedon" datetime="{{ page.date | date_to_xmlschema }}">
+        <time id="postedon" datetime="{{ latest_post.date | date_to_xmlschema }}">
             posted <span id="postedago"></span>
             on {{ latest_post.date | date: "%B %-d, %Y" }}
         </time>
