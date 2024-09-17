@@ -858,6 +858,12 @@ div.a2a_full_footer {display:none;}
 	display: flex;
   }
   
+  .marquee h1{
+	white-space: nowrap;
+
+  }
+
+
 .feedEkList {
 	display:flex;  
   list-style:none;
