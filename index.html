@@ -26,8 +26,13 @@ description: "A great Jekyll theme developed by Sal @wowthemesnet."
     </h2>
     <div>
         <small class="text-muted">
-            {{ page.date | timeago }}
+            {{ latest_post.date | date: '%b %d, %Y' }}
         </small>
+
+        <time id="postedon" datetime="{{ page.date | date_to_xmlschema }}">
+            posted <span id="postedago"></span>
+            on {{ page.date | date: "%B %-d, %Y" }}
+        </time>
     </div>
     </div>
     </div>
