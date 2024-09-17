@@ -867,7 +867,7 @@ div.a2a_full_footer {display:none;}
 .marquee--long { 
     font-size: 14px;
 }
-.marquee li {   
+.marquee .feedEkList {   
     display: inline-block;
     white-space: nowrap;
     color: #ffffff;
