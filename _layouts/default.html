@@ -115,26 +115,26 @@ function ago(date) {
 
     var interval = Math.floor(seconds / (60 * 60 * 24 * 365));
     if (Math.floor(seconds / (60 * 60 * 24 * 30 * 365)) >= 1) {
-        return render(interval, "year");
+        return render(interval, "год");
     }
     interval = Math.floor(seconds / (60 * 60 * 24 * 30));
     if (interval >= 1) {
-        return render(interval, "month");
+        return render(interval, "месяц");
     }
     interval = Math.floor(seconds / (60 * 60 * 24));
     if (interval >= 1) {
-        return render(interval, "day");
+        return render(interval, "день");
     }
     interval = Math.floor(seconds / (60 * 60));
     if (interval >= 1) {
-        return render(interval, "hour");
+        return render(interval, "час");
     }
     interval = Math.floor(seconds / 60);
     if (interval >= 1) {
-        return render(interval, "minute");
+        return render(interval, "минут");
     }
     interval = Math.floor(seconds);
-    return render(interval, "second");
+    return render(interval, "секунд");
 }
 
 var date = Date.parse(document.getElementById("postedon").getAttribute("datetime"));
