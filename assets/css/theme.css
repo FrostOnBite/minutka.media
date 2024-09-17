@@ -873,8 +873,16 @@ div.a2a_full_footer {display:none;}
   padding: 0 20px;
 }
 
-.icon-svg{
+.icon-svg-20{
 	color: #fff;
+	fill:#FFFFFF;
 	width: 20px; 
 	height: 20px;
+}
+
+.icon-svg-48{
+	color: #fff;
+	fill:#FFFFFF;
+	width: 48px; 
+	height: 48px;
 }
