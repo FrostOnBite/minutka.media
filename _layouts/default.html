@@ -111,7 +111,7 @@
 
     <script>
         var date = Date.parse(document.getElementById("postedon").getAttribute("datetime"));
-        document.getElementById("postedago").innerHTML = dayjs().to(dayjs("date"));
+        document.getElementById("postedago").innerHTML = dayjs().to(dayjs(date));
     </script>
 
 
