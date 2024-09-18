@@ -118,12 +118,12 @@
 
 <script>
 
-    import * as timeago from 'timeago.js';
- 
-const nodes = document.querySelectorAll('.needs-tobe-rendered');
+        $(document).ready(function(){
+            $('.needs-tobe-rendered').timeago.render(nodes, 'zh_CN');
+        }); 
  
 // use render method to render nodes in real time
-timeago.render(nodes, 'zh_CN');
+
 
 </script>
 
