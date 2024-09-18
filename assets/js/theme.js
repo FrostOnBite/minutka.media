@@ -56,6 +56,7 @@
 
 
     window.onscroll = function() {myFunction()};
+    
 
 var header = document.getElementById("MagicMenu");
 var sticky = header.offsetTop;
