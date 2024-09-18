@@ -898,5 +898,5 @@ div.a2a_full_footer {display:none;}
   }
 
 #MagicMenu{
-	z-index: 1000;
+	z-index: 9999;
 }
