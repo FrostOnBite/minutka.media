@@ -886,3 +886,13 @@ div.a2a_full_footer {display:none;}
 	width: 48px; 
 	height: 48px;
 }
+
+.sticky {
+	position: fixed;
+	top: 0;
+	width: 100%;
+  }
+  
+  .sticky + .content {
+	padding-top: 102px;
+  }
