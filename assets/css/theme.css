@@ -896,3 +896,7 @@ div.a2a_full_footer {display:none;}
   .sticky + .content {
 	padding-top: 102px;
   }
+
+#MagicMenu{
+	z-index: 1000;
+}
