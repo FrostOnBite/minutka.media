@@ -113,8 +113,24 @@
     </script>
 
     <script type="text/javascript" src="/assets/js/script.js"></script>
-    
+
     <script type="text/javascript" src="//unpkg.com/timeago.js"></script>
+
+<script>
+
+    import * as timeago from 'timeago.js';
+ 
+const nodes = document.querySelectorAll('.needs-tobe-rendered');
+ 
+// use render method to render nodes in real time
+timeago.render(nodes, 'zh_CN');
+ 
+// cancel all real-time render task
+timeago.cancel();
+ 
+// or cancel for the specific one
+timeago.cancel(nodes[0])
+</script>
 
     <!-- Footer -->
     <footer class="bg-black border-top p-3 text-white small">
