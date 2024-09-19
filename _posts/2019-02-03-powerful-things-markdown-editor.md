@@ -1,48 +1,20 @@
 ---
 layout: post
-title:  "Powerful things you can do with the Markdown editor"
-author: kira
+title:  "Ушел из жизни Николай Сванидзе, известный своим мужеством в публичных спорах с Путиным."
+author: jane
 categories: [ Jekyll, tutorial ]
-image: https://images.unsplash.com/photo-1528784351875-d797d86873a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80
-tags: [summer]
+image: assets/images/owl_detail.jpg
+tags: [sticky]
 ---
-There are lots of powerful things you can do with the Markdown editor. If you've gotten pretty comfortable with writing in Markdown, then you may enjoy some more advanced tips about the types of things you can do with Markdown!
 
-As with the last post about the editor, you'll want to be actually editing this post as you read it so that you can see all the Markdown code we're using.
+Историк и телеведущий Николай Сванидзе скончался. В последние годы своей жизни он активно критиковал власть, что в итоге привело к его отставке с поста в Совете при президенте по правам человека в 2022 году. Минутка собрала его последние публичные выступления, чтобы увековечить память о его вкладе и принципиальной позиции.
 
+#### Early 18th century woodcut of Bucharest
 
-## Special formatting
+The Ottomans appointed Greek administrators (Phanariotes) to run the town from the 18th century. A short-lived revolt initiated by Tudor Vladimirescu in 1821 led to the end of the rule of Constantinople Greeks in Bucharest.[19]
 
-As well as bold and italics, you can also use some other special formatting in Markdown when the need arises, for example:
+The Old Princely Court (Curtea Veche) was erected by Mircea Ciobanul in the mid-16th century. Under subsequent rulers, Bucharest was established as the summer residence of the royal court. During the years to come, it competed with Târgoviște on the status of capital city after an increase in the importance of southern Muntenia brought about by the demands of the suzerain power – the Ottoman Empire.
 
-+ ~~strike through~~
-+ ==highlight==
-+ \*escaped characters\*
+Bucharest finally became the permanent location of the Wallachian court after 1698 (starting with the reign of Constantin Brâncoveanu).
 
-
-## Writing code blocks
-
-There are two types of code elements which can be inserted in Markdown, the first is inline, and the other is block. Inline code is formatted by wrapping any word or words in back-ticks, `like this`. Larger snippets of code can be displayed across multiple lines using triple back ticks:
-
-```
-.my-link {
-    text-decoration: underline;
-}
-```
-
-If you want to get really fancy, you can even add syntax highlighting using Rouge.
-
-
-![walking]({{ site.baseurl }}/assets/images/8.jpg)
-
-## Reference lists
-
-The quick brown jumped over the lazy.
-
-Another way to insert links in markdown is using reference lists. You might want to use this style of linking to cite reference material in a Wikipedia-style. All of the links are listed at the end of the document, so you can maintain full separation between content and its source or reference.
-
-## Full HTML
-
-Perhaps the best part of Markdown is that you're never limited to just Markdown. You can write HTML directly in the Markdown editor and it will just work as HTML usually does. No limits! Here's a standard YouTube embed code as an example:
-
-<p><iframe style="width:100%;" height="315" src="https://www.youtube.com/embed/Cniqsc9QfDo?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe></p>
+Partly destroyed by natural disasters and rebuilt several times during the following 200 years, and hit by Caragea’s plague in 1813–14, the city was wrested from Ottoman control and occupied at several intervals by the Habsburg Monarchy (1716, 1737, 1789) and Imperial Russia (three times between 1768 and 1806). It was placed under Russian administration between 1828 and the Crimean War, with an interlude during the Bucharest-centred 1848 Wallachian revolution. Later, an Austrian garrison took possession after the Russian departure (remaining in the city until March 1857). On 23 March 1847, a fire consumed about 2,000 buildings, destroying a third of the city.
