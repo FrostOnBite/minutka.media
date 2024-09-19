@@ -1,4 +1,13 @@
-             <!-- Author Box -->
+         			<!-- Tags -->
+			<div class="mb-4">
+				<span class="taglist">
+				{% for tag in page.tags %}
+				  <a class="sscroll btn btn-light btn-sm font-weight-bold" href="{{site.baseurl}}/tags.html#{{ tag | downcase }}">{{ tag | downcase }}</a>
+				{% endfor %}
+				</span>
+			</div>
+         
+         <!-- Author Box -->
              {% if page.author %}				
              <div class="row mt-5">
                  <div class="col-md-2 align-self-center">
