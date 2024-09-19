@@ -7,6 +7,8 @@
         {% assign latest_post = site.posts[0] %}  
         <div class="mb-3 d-flex align-items-center">                
                 <div>
+                    <div class="w-100 p-5 d-md-block grayscale" style="background-image: url({% if latest_post.image contains "://" %}{{ latest_post.image }}{% else %} {{site.baseurl}}/{{ latest_post.image}}{% endif %});">	
+                    </div>
                     <h4 class="mb-2">
                     <a class="text-light" href="{{site.baseurl}}{{latest_post.url}}">{{ latest_post.title }}</a>
                     </h4>
