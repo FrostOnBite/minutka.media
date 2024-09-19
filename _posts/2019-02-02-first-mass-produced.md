@@ -1,27 +1,31 @@
 ---
 layout: post
-title:  "The first mass-produced book to deviate from a rectilinear format"
-author: sal
-categories: [ tutorial ]
-image: assets/images/17.jpg
+title:  "В Петербурге убит активист Виталий Иоффе"
+author: kira
+image: assets/images/people/2024-09-19-164637.png
 tags: [featured]
 ---
-The first mass-produced book to deviate from a rectilinear format, at least in the United States, is thought to be this 1863 edition of Red Riding Hood, cut into the shape of the protagonist herself with the troublesome wolf curled at her feet. Produced by the Boston-based publisher Louis Prang, this is the first in their “Doll Series”, a set of five “die-cut” books, known also as shape books — the other titles being Robinson Crusoe, Goody Two-Shoes (also written by Red Riding Hood author Lydia Very), Cinderella, and King Winter. 
 
-An 1868 Prang catalogue would later claim that such “books in the shape of a regular paper Doll... originated with us”. 
 
-> It would seem the claim could also extend to die cut books in general, as we can’t find anything sooner, but do let us know in the comments if you have further light to shed on this! Such books are, of course, still popular in children’s publishing today, though the die cutting is not now limited to mere outlines, as evidenced in a beautiful 2014 version of the same Little Red Riding Hood story. 
 
-The die cut has also been employed in the non-juvenile sphere as well, a recent example being Jonathan Safran Foer’s ambitious Tree of Codes. 
+17 сентября в Петербурге убили 53-летнего оппозиционного активиста Виталия Иоффе. В преступлении призналась 20-летняя Александра Синько, которая идентифицирует себя как квир-блогерка и транс-персона. Об этом сообщили несколько источников, включая «Бумагу» и телеграм-канал «Mash на Мойке».
 
-As for this particular rendition of Charles Perrault’s classic tale, the text and design is by Lydia Very (1823-1901), sister of Transcendentalist poet Jones Very. The gruesome ending of the original - which sees Little Red Riding Hood being gobbled up as well as her grandmother - is avoided here, the gore giving way to the less bloody aims of the morality tale, and the lesson that one should not disobey one’s mother.
+По данным «Mash на Мойке», Синько нанесла Иоффе не менее 20 ножевых ударов, после чего опубликовала посты с места преступления в своем телеграм-канале. Блогерка пыталась скрыться, но позднее сдалась полиции, явившись в отдел в Выборге. На данный момент её канал удалён.
 
-To deviate from a rectilinear format, at least in the United States, is thought to be this 1863 edition of Red Riding Hood, cut into the shape of the protagonist herself with the troublesome wolf curled at her feet. Produced by the Boston-based publisher Louis Prang, this is the first in their “Doll Series”, a set of five “die-cut” books, known also as shape books — the other titles being Robinson Crusoe, Goody Two-Shoes (also written by Red Riding Hood author Lydia Very), Cinderella, and King Winter. 
+Как сообщили в СК, тело Виталия Иоффе обнаружили в его квартире в Калининском районе Петербурга с множественными ножевыми ранениями. Следователи продолжают работать на месте преступления. Дочь Иоффе, Елена, подтвердила его смерть, но заявила, что пока не обладает точной информацией об обстоятельствах трагедии.
 
-An 1868 Prang catalogue would later claim that such “books in the shape of a regular paper Doll... originated with us”. 
+Активистская деятельность Виталия Иоффе
 
-> The claim could also extend to die cut books in general, as we can’t find anything sooner, but do let us know in the comments if you have further light to shed on this! Such books are, of course, still popular in children’s publishing today, though the die cutting is not now limited to mere outlines, as evidenced in a beautiful 2014 version of the same Little Red Riding Hood story. 
+![ioffe](assets/images/people/2024-09-19-164637.png)
 
-The die cut has also been employed in the non-juvenile sphere as well, a recent example being Jonathan Safran Foer’s ambitious Tree of Codes. 
+Виталий Иоффе был активным участником оппозиционных протестов. С 2022 года он регулярно выходил на одиночные пикеты против войны в Украине и поддерживал политических заключённых. Его неоднократно задерживали во время акций протеста, в том числе в годовщину начала войны, когда он вместе с Синько возложил цветы к памятнику Тарасу Шевченко.
 
-As for this particular rendition of Charles Perrault’s classic tale, the text and design is by Lydia Very (1823-1901), sister of Transcendentalist poet Jones Very. The gruesome ending of the original - which sees Little Red Riding Hood being gobbled up as well as her grandmother - is avoided here, the gore giving way to the less bloody aims of the morality tale, and the lesson that one should not disobey one’s mother.
+В марте 2024 года Иоффе был задержан за пикет, приуроченный к годовщине смерти Сталина. На плакате активист написал: «Сдох один, сдохнет другой». Ранее он испортил бюллетень на президентских выборах, написав на нём: «Будьте вы все прокляты».
+
+Личность Александры Синько
+
+![sunko](assets/images/people/01eaf045515593.Y3JvcCw3ODMsNjEyLDExNCwxNzc.jpg)
+
+Александра Синько переехала в Петербург из Новосибирска в конце 2023 года. Она работала курьером и стала известна своими пикетами против закона о запрете трансгендерного перехода. В соцсетях Синько рассказывала о своей борьбе с психическими расстройствами, включая посттравматическое стрессовое расстройство и пограничное расстройство личности.
+
+Сейчас следствие выясняет мотивы и детали преступления.
