@@ -1,0 +1,65 @@
+<div class="container-full">
+    <div class="container">
+
+
+
+<div class="col-md-6">
+
+
+        <!-- latest post -->
+        {% assign latest_post = site.posts[0] %}  
+        <div class="mb-3 d-flex align-items-center">                
+                <div>
+                    <h4 class="mb-2">
+                    <a class="text-light" href="{{site.baseurl}}{{latest_post.url}}">{{ latest_post.title }}</a>
+                    </h4>
+                    <small class="text-muted">
+                        {{ latest_post.date | date: '%b %d, %Y' }}
+                    </small>
+                </div>
+            </div>
+        
+    <!-- second latest post -->
+    {%- assign second_post = site.posts[1] -%}        
+    <div class="mb-3 d-flex align-items-center">                
+            <div>
+                <h4 class="mb-2">
+                <a class="text-light" href="{{site.baseurl}}{{second_post.url}}">{{ second_post.title }}</a>
+                </h4>
+                <small class="text-muted">
+                    {{ second_post.date | date: '%b %d, %Y' }}
+                </small>
+            </div>
+        </div>
+    
+    <!-- third latest post -->
+    {%- assign third_post = site.posts[2] -%}        
+    <div class="mb-3 d-flex align-items-center">                             
+            <div>
+                <h4 class="mb-2">
+                <a class="text-light" href="{{site.baseurl}}{{third_post.url}}">{{ third_post.title }}</a>
+                </h4>
+                <small class="text-muted">
+                    {{ third_post.date | date: '%b %d, %Y' }}
+                </small>
+            </div>
+        </div>
+    
+    <!-- fourth latest post -->
+    {%- assign fourth_post = site.posts[3] -%}        
+    <div class="mb-3 d-flex align-items-center">                            
+            <div>
+                <h4 class="mb-2">
+                <a class="text-light" href="{{site.baseurl}}{{fourth_post.url}}">{{ fourth_post.title }}</a>
+                </h4>
+                <small class="text-muted">
+                    {{ fourth_post.date | date: '%b %d, %Y' }}
+                </small>
+            </div>
+        </div>
+    
+</div>
+
+
+</div>
+</div>
