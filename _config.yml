@@ -15,7 +15,6 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-seo-tag
-  - jekyll-timeago
   
 authors:
     kira:
