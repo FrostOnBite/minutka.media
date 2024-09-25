@@ -694,6 +694,7 @@ article blockquote:before {
 }
 
 article blockquote p{
+	font-size:2rem;
 	padding-left: 40px;
 }
 
