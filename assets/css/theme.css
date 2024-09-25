@@ -683,14 +683,17 @@ article blockquote {
 	position:relative;
 }
 article blockquote:before {
-	content:"!";
-	font-family: "GolosTextWebRegular",serif;
-	font-size:6rem;
 	margin: -1rem 2rem 0 -2rem;
 	position:absolute;
 	opacity:1;
 	float:left;
 	line-height:1;
+	width: 0.375em;
+    left: 1em;
+    top: 0.5em;
+    height: 0.375em;
+    background-color: #000;
+    border-radius: 50%;
 }
 
 article blockquote p{
