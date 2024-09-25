@@ -2,7 +2,6 @@
 layout: post
 title:  "Ушел из жизни Николай Сванидзе, известный своим мужеством в публичных спорах с Путиным."
 author: jane
-categories: [ Jekyll, tutorial ]
 image: assets/images/owl_detail.jpg
 ---
 
