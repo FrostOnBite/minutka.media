@@ -879,6 +879,13 @@ div.a2a_full_footer {display:none;}
 	height: 20px;
 }
 
+.icon-svg-32{
+	color: #000;
+	fill:#000;
+	width: 32px; 
+	height: 32px;
+}
+
 .icon-svg-48{
 	color: #fff;
 	fill:#FFFFFF;
