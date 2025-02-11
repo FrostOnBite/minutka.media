@@ -917,7 +917,7 @@ div.a2a_full_footer {display:none;}
 	mix-blend-mode: multiply;
 	-o-object-fit: cover;
 	object-fit: cover;
-	position: absolute;
+	/* position: absolute; */
 	top: 0;
 	width: 100%;
   }
