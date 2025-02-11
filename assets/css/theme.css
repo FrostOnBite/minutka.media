@@ -906,3 +906,18 @@ div.a2a_full_footer {display:none;}
 #MagicMenu{
 	z-index: 9999;
 }
+
+.topfirstimage{
+
+}
+
+.topfirstimage img {
+	filter: grayscale(100%);
+	height: 100%;
+	mix-blend-mode: multiply;
+	-o-object-fit: cover;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	width: 100%;
+  }
