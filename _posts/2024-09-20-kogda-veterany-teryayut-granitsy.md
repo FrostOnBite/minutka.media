@@ -2,7 +2,7 @@
 layout: post
 title:  "Когда Ветераны Теряют Границы: Истории о Домогательствах российских военных в Общественном Транспорте"
 author: kira
-image: assets/images/covers/2002_02.jpg
+image: assets/images/covers/2002_02.png
 tags: [sticky]
 ---
 
@@ -52,7 +52,7 @@ tags: [sticky]
 
 Только после вмешательства пассажиров мужчину вышел из вагона на ближайшей станции.
 
-![Мария едет одна]({{site.baseurl}}/assets/images/covers/2024-09-24-141037_005-min.jpg)
+![Мария едет одна]({{site.baseurl}}/assets/images/covers/2002_03.png)
 
 
 #### Солдат ребенка не обидит
