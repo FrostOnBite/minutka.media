@@ -52,8 +52,6 @@ image: assets/images/id1041665314.jpg
         <source src="/assets/images/id1041665314_1080p_subs.mp4" type="video/mp4" />
     </video>
 </div>
-{: .text-muted }
+
 *Обращение Виктора Овчинникова. Источник - социальная сеть ВКонтакте*
-
-
-
+{: .text-muted }
