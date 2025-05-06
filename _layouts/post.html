@@ -95,6 +95,12 @@ layout: default
 				</div>
 			</div>
             {% endif %}  
+
+            <!-- Comments -->
+            {% if page.comments != false %}
+                {% include comments.html %}
+            {% endif %}
+            
 		</div>
       
 	</div>
