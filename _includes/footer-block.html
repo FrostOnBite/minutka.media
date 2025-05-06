@@ -13,7 +13,9 @@
                     <a class="text-light" href="{{site.baseurl}}{{latest_post.url}}">{{ latest_post.title }}</a>
                     </h4>
                     <small class="text-muted">
-                        {{ latest_post.date | date: '%b %d, %Y' }}
+                        <time class="timeago" datetime="{{ page.date | date_to_xmlschema }}">
+							{{ latest_post.date | date: "%B %d, %Y" }}
+						</time>
                     </small>
                 </div>
             </div>
