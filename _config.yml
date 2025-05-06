@@ -1,8 +1,8 @@
 # Site
-name: 'Mundana'
-description: 'Mundana is a free Jekyll theme for awesome people like you, Medium like.'
+name: 'minutka.media'
+description: 'minutka.media - голос тех, кого не услышат по телевизору. Только факты и люди'
 baseurl: 'http://www.minutka.media'
-disqus: 'demowebsite'
+disqus: ''
 email: 'minutka.media@proton.me'
 mailchimp-list: ''
 
