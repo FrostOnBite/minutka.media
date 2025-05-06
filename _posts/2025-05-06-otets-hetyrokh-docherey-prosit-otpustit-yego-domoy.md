@@ -48,11 +48,11 @@ image: assets/images/id1041665314.jpg
 Дети Виктора записывали видеообращения, писали письма в администрацию президента, Минобороны, военную прокуратуру. Они просят отпустить их отца домой — «хотя бы
 
 <div class="video-box">
-    <video id="player" playsinline controls>
+    <video width="320" height="240" id="player" playsinline controls>
         <source src="/assets/images/id1041665314_1080p.mp4" type="video/mp4" />
     </video>
     <br>
-    <video id="player" playsinline controls>
+    <video width="320" height="240" id="player" playsinline controls>
         <source src="/assets/images/id1041665314_1080p_two.mp4" type="video/mp4" />
     </video>
 </div>
