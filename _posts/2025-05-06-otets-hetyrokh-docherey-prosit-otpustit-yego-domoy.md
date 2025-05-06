@@ -51,7 +51,6 @@ image: assets/images/id1041665314.jpg
     <video width="320" height="240" id="player" playsinline controls>
         <source src="/assets/images/id1041665314_1080p.mp4" type="video/mp4" />
     </video>
-    <br>
     <video width="320" height="240" id="player" playsinline controls>
         <source src="/assets/images/id1041665314_1080p_two.mp4" type="video/mp4" />
     </video>
