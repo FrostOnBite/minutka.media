@@ -47,11 +47,10 @@ image: assets/images/id1041665314.jpg
 
 Дети Виктора записывали видеообращения, писали письма в администрацию президента, Минобороны, военную прокуратуру. Они просят отпустить их отца домой — «хотя бы
 
-<div class="video-box">
-    <video width="320" height="240" id="player" playsinline controls>
-        <source src="/assets/images/id1041665314_1080p.mp4" type="video/mp4" />
-    </video>
-    <video width="320" height="240" id="player" playsinline controls>
-        <source src="/assets/images/id1041665314_1080p_two.mp4" type="video/mp4" />
+<div class="video-box" style="text-align:center; margin:0 auto;">
+    <video width="640" height="480" id="player" playsinline controls>
+        <source src="/assets/images/id1041665314_1080p_subs.mp4" type="video/mp4" />
     </video>
 </div>
+*Обращение Виктора Овчинникова. Источник - социальная сеть ВКонтакте*
+
