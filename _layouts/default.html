@@ -79,7 +79,6 @@
                         
                     </div>
                 </a>  
-
                 {% include search-lunr.html %}
             </ul>
         </div>
@@ -109,26 +108,55 @@
 
 
 
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('.announcement-animation').FeedEk({
-            FeedUrl : 'https://www.currenttime.tv/api/zuvmpvepo_pv',
-            MaxCount : 3,
-            ShowDesc : false,
-            ShowPubDate : false
-            }); 
-        }); 
-    </script>
-
-    <script type="text/javascript" src="/assets/js/script.js"></script>
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
-
-    <script>
+        <script type="text/javascript">
             $(document).ready(function(){
-                $('.needs-tobe-rendered').timeago.render(nodes, 'zh_CN');
+                $('.announcement-animation').FeedEk({
+                FeedUrl : 'https://www.currenttime.tv/api/zuvmpvepo_pv',
+                MaxCount : 3,
+                ShowDesc : false,
+                ShowPubDate : false
+                }); 
             }); 
-    // use render method to render nodes in real time
+        </script>
+    
+        <script type="text/javascript" src="/assets/js/script.js"></script>
+    
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
+    
+    <script>
+      function timeAgo(dateString) {
+        const date = new Date(dateString);
+        const now = new Date();
+        const seconds = Math.floor((now - date) / 1000);
+    
+        const rtf = new Intl.RelativeTimeFormat('ru', { numeric: 'auto' });
+    
+        const intervals = [
+          { label: 'year', seconds: 31536000 },
+          { label: 'month', seconds: 2592000 },
+          { label: 'week', seconds: 604800 },
+          { label: 'day', seconds: 86400 },
+          { label: 'hour', seconds: 3600 },
+          { label: 'minute', seconds: 60 },
+          { label: 'second', seconds: 1 }
+        ];
+    
+        for (const interval of intervals) {
+          const count = Math.floor(seconds / interval.seconds);
+          if (count >= 1) {
+            return rtf.format(-count, interval.label);
+          }
+        }
+    
+        return 'только что';
+      }
+    
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".timeago").forEach(el => {
+          const datetime = el.getAttribute("datetime");
+          el.textContent = timeAgo(datetime);
+        });
+      });
     </script>
 
     <script>
