@@ -2,7 +2,7 @@
 layout: post
 title:  "Когда Ветераны Теряют Границы: Истории о Домогательствах российских военных в Общественном Транспорте"
 author: kira
-image: assets/images/covers/2024-09-24-140207_005-min.jpeg
+image: assets/images/covers/2002_02.jpg
 tags: [sticky]
 ---
 
