@@ -117,16 +117,16 @@
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
 
-<script>
+    <script>
+            $(document).ready(function(){
+                $('.needs-tobe-rendered').timeago.render(nodes, 'zh_CN');
+            }); 
+    // use render method to render nodes in real time
+    </script>
 
-        $(document).ready(function(){
-            $('.needs-tobe-rendered').timeago.render(nodes, 'zh_CN');
-        }); 
- 
-// use render method to render nodes in real time
-
-
-</script>
+    <script>
+      const player = new Plyr('#player');
+    </script>
 
     <!-- Footer -->
     <footer class="bg-black border-top p-3 text-white small">
