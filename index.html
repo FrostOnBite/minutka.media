@@ -28,8 +28,8 @@ description: "A great Jekyll theme developed by Sal @wowthemesnet."
     </h2>
     <div>
         <small class="text-muted">
-            <time id="postedon" datetime="{{ latest_post.date | date_to_xmlschema }}">
-                posted <span id="postedago"></span>
+            <time class="timeago" datetime="{{ latest_post.date | date_to_xmlschema }}">
+              {{ latest_post.date | date: "%B %d, %Y" }}
             </time>
         </small>
     </div>
@@ -47,7 +47,9 @@ description: "A great Jekyll theme developed by Sal @wowthemesnet."
                     <a class="text-light" href="{{site.baseurl}}{{second_post.url}}">{{ second_post.title }}</a>
                     </h4>
                     <small class="text-muted">
-                        {{ second_post.date | date: '%b %d, %Y' }}
+                        <time class="timeago" datetime="{{ second_post.date | date_to_xmlschema }}">
+                          {{ second_post.date | date: "%B %d, %Y" }}
+                        </time>
                     </small>
                 </div>
             </div>
@@ -60,7 +62,9 @@ description: "A great Jekyll theme developed by Sal @wowthemesnet."
                     <a class="text-light" href="{{site.baseurl}}{{third_post.url}}">{{ third_post.title }}</a>
                     </h4>
                     <small class="text-muted">
-                        {{ third_post.date | date: '%b %d, %Y' }}
+                        <time class="timeago" datetime="{{ third_post.date | date_to_xmlschema }}">
+                          {{ third_post.date | date: "%B %d, %Y" }}
+                        </time>
                     </small>
                 </div>
             </div>
@@ -73,7 +77,9 @@ description: "A great Jekyll theme developed by Sal @wowthemesnet."
                     <a class="text-light" href="{{site.baseurl}}{{fourth_post.url}}">{{ fourth_post.title }}</a>
                     </h4>
                     <small class="text-muted">
-                        {{ fourth_post.date | date: '%b %d, %Y' }}
+                        <time class="timeago" datetime="{{ fourth_post.date | date_to_xmlschema }}">
+                          {{ fourth_post.date | date: "%B %d, %Y" }}
+                        </time>
                     </small>
                 </div>
             </div>
