@@ -121,13 +121,22 @@
     
         <script type="text/javascript" src="/assets/js/script.js"></script>
     
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
     
     <script>
       function timeAgo(dateString) {
         const date = new Date(dateString);
         const now = new Date();
         const seconds = Math.floor((now - date) / 1000);
+        const oneMonth = 2592000; // 30 дней в секундах
+    
+        // Если больше месяца — не преобразуем
+        if (seconds > oneMonth) {
+          return date.toLocaleDateString('ru-RU', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          });
+        }
     
         const rtf = new Intl.RelativeTimeFormat('ru', { numeric: 'auto' });
     
