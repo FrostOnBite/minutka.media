@@ -46,3 +46,4 @@ image: /assets/images/covers/2024-09-10.jpg
 ![Огород в Судже]({{site.baseurl}}/assets/images/2024-09-10-collage.jpg)
 
 *Огород Валерий и его жены оставленный в Судже. Источник - социальная сеть ВКонтакте*
+{: .text-muted }
