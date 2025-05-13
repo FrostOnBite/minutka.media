@@ -172,6 +172,28 @@
       const player = new Plyr('#player');
     </script>
 
+    <script>
+      // Массив объектов: картинка + ссылка
+      const ads = [
+          {
+              image: '/assets/images/frame.jpg',
+              link: '/'
+          },
+          {
+              image: '/assets/images/frame2.jpg',
+              link: '/'
+          }
+          // Можно добавить ещё
+      ];
+
+      // Случайный выбор
+      const randomAd = ads[Math.floor(Math.random() * ads.length)];
+
+      // Установка фонового изображения и ссылки
+      document.getElementById('adBlock').style.backgroundImage = `url(${randomAd.image})`;
+      document.getElementById('adLink').href = randomAd.link;
+    </script>
+
     <!-- Footer -->
     <footer class="bg-black border-top p-3 text-white small">
         <div class="container">
