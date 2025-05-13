@@ -311,7 +311,7 @@ a.text-dark:hover {
     }
 }
 
-.jumbotron img {
+.big-card-index img {
     filter: grayscale(100%);
     height: 100%;
     mix-blend-mode: multiply;
