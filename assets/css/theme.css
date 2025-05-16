@@ -12,6 +12,9 @@ body {
 	overflow-x:hidden;
 	 /* padding-top:69.75px; */
 }
+body.page-about #adLink {
+	display: none;
+  }
 .site-content {
 	margin-top:30px;
 	min-height:400px;
