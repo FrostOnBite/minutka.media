@@ -194,6 +194,17 @@
       document.getElementById('adLink').href = randomAd.link;
     </script>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.location.pathname === "/about/") {
+          var adLink = document.getElementById("adLink");
+          if (adLink) {
+            adLink.style.display = "none";
+          }
+        }
+      });
+    </script>
+
     <!-- Footer -->
     <footer class="bg-black border-top p-3 text-white small">
         <div class="container">
