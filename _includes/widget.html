@@ -1,14 +1,13 @@
 <div class="sticky-top sticky-top-offset">
     <h4 class="spanborder"><span>Рассылка «Минутки»</span></h4>  
     <ol class="list-featured">	
-        
 
-  <div class="col-auto bg-light mt-3 mb-3">
-    <subscribe class="p-5">
-      <input type="password" class="form-control rounded-0 mt-2" id="inputPassword2" placeholder="E-mail">
-      <button type="submit" class="btn btn-block btn-dark rounded-0 mt-3 mb-1">Подписаться</button>
-    </subscribe>
-  </div>
+      <div class="col-auto bg-light mt-3 mb-3">
+        <form action="https://formspree.io/f/mwpoyrab" method="POST" class="p-5">
+          <input type="email" name="email" class="form-control rounded-0 mt-2" placeholder="E-mail" required>
+          <button type="submit" class="btn btn-block btn-dark rounded-0 mt-3 mb-1">Подписаться</button>
+        </form>
+      </div>
 
         <thetruestory-widget-top edition="ru" stories="5" variant="naked" category="politics"></thetruestory-widget-top>
     </ol>

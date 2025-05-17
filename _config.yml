@@ -23,7 +23,7 @@ authors:
       avatar:         /assets/images/kira-veshnyakova.jpg
       bio:            ""
       email:          knock@minutka.media
-      twitter:        https://twitter.com/wowthemesnet
+      twitter:        
 
     jane:
       name:           Альберь Маренко
@@ -31,7 +31,7 @@ authors:
       avatar:         /assets/images/avatar2.jpg
       bio:            ""
       email:          knock@minutka.media
-      twitter:        https://twitter.com/wowthemesnet
+      twitter:        
  
 # Defaults
 defaults:
