@@ -206,38 +206,36 @@
     </script>
 
 <script>
-  document.getElementById("subscribeForm").addEventListener("submit", async function (e) {
-    e.preventDefault();
+  document.querySelectorAll('.formspree-form').forEach(form => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-    const form = e.target;
-    const data = new FormData(form);
-    const formMessage = document.getElementById("formMessage");
+      const data = new FormData(form);
+      const messageBox = form.querySelector('.form-message');
 
-    try {
-      const response = await fetch("https://formspree.io/f/mwpoyrab", {
-        method: "POST",
-        body: data,
-        headers: {
-          'Accept': 'application/json'
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          messageBox.textContent = "Спасибо! Вы успешно подписались.";
+          messageBox.className = "form-message mt-2 text-success";
+          messageBox.style.display = "block";
+          form.reset();
+        } else {
+          messageBox.textContent = "Ошибка при отправке.";
+          messageBox.className = "form-message mt-2 text-danger";
+          messageBox.style.display = "block";
         }
-      });
-
-      if (response.ok) {
-        formMessage.textContent = "Спасибо! Вы успешно подписались.";
-        formMessage.style.display = "block";
-        form.reset();
-      } else {
-        formMessage.textContent = "Произошла ошибка. Попробуйте ещё раз.";
-        formMessage.style.display = "block";
-        formMessage.classList.remove("text-success");
-        formMessage.classList.add("text-danger");
+      } catch (err) {
+        messageBox.textContent = "Ошибка сети.";
+        messageBox.className = "form-message mt-2 text-danger";
+        messageBox.style.display = "block";
       }
-    } catch (error) {
-      formMessage.textContent = "Ошибка сети. Проверьте соединение.";
-      formMessage.style.display = "block";
-      formMessage.classList.remove("text-success");
-      formMessage.classList.add("text-danger");
-    }
+    });
   });
 </script>
 
