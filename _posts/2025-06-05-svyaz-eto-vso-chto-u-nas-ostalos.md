@@ -42,10 +42,6 @@ wavesurfer.on('interaction', () => {
 
 <div class="video-box" style="text-align:center; margin:0 auto;">
     <video width="640" height="480" id="player" playsinline controls>
-        <source src="/assets/images/5328201986351330787.mp4" type="video/mp4" />
-    </video>
-
-    <video width="640" height="480" id="player" playsinline controls>
         <source src="/assets/images/5328201986351330789.mp4" type="video/mp4" />
     </video>
 </div>
