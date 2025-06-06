@@ -922,3 +922,7 @@ div.a2a_full_footer {display:none;}
 	top: 0;
 	width: 100%;
   }
+
+.text-muted{
+	font-size: 75%;
+  }
