@@ -27,6 +27,7 @@ const wavesurfer = WaveSurfer.create({
   waveColor: '#4F4A85',
   progressColor: '#383351',
   url: '/assets/images/audio/audio_2025-06-05_21-30-43.mp3',
+  mediaControls: true,
 })
 
 wavesurfer.on('interaction', () => {
