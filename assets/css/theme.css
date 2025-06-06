@@ -926,3 +926,8 @@ div.a2a_full_footer {display:none;}
 .text-muted{
 	font-size: 75%;
   }
+
+
+thetruestory-widget-top header{
+	display: none;
+}
