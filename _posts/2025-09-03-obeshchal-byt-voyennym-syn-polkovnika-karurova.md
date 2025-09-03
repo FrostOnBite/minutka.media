@@ -35,7 +35,7 @@ image: /assets/images/2025-09-03-photo-2.jpg
     </video>
 </div>
 
-На другом видео Тамерлан показывает пару кроссовок A Bathing Ape Bape Sta Low Shark White. Эти кроссовки, в зависимости от состояния, можно найти на авито за 25 000 рублей. 
+На другом видео Тамерлан показывает пару кроссовок A Bathing Ape Bape Sta Low Shark White. Эти кроссовки, в зависимости от состояния, можно найти на [авито](https://vk.com/wall-155631691_8841](https://www.avito.ru/moskva/odezhda_obuv_aksessuary/a_bathing_ape_bape_sta_low_shark_white_2281374659 "Авито") за 25 000 рублей. 
 
 <div class="video-box" style="text-align:center; margin:0 auto;">
     <video width="480" height="360" id="player" playsinline controls>
@@ -43,7 +43,7 @@ image: /assets/images/2025-09-03-photo-2.jpg
     </video>
 </div>
 
-Тамерлан также, не стесняеться демонстрировать часы, которые очень напоминают популярные Rolex Submariner "Hulk" Green. Нам трудно сказать, являются ли эти часы подделкой или оригиналом, но такие часы в Москве продаются за "символичную" сумму в 1 543 500 рублей на сайте kutuzov-watch.
+Тамерлан также, не стесняеться демонстрировать часы, которые очень напоминают популярные Rolex Submariner "Hulk" Green. Нам трудно сказать, являются ли эти часы подделкой или оригиналом, но такие часы в Москве продаются за "символичную" сумму в 1 543 500 рублей на сайте [kutuzov-watch] https://www.avito.ru/moskva/odezhda_obuv_aksessuary/a_bathing_ape_bape_sta_low_shark_white_2281374659 "Kutuzov Watch").
 
 ![Часы]({{site.baseurl}}/assets/images/2025-09-03-photo-1.jpg)
 *Источник - личный канал Тамерлана @newyork001iq в Telegram*
