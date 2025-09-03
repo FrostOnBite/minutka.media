@@ -44,7 +44,7 @@ image: /assets/images/2025-09-03-photo-2.jpg
     </video>
 </div>
 
-Тамерлан также, не стесняеться демонстрировать часы, которые очень напоминают популярные Rolex Submariner "Hulk" Green. Нам трудно сказать, являются ли эти часы подделкой или оригиналом, но такие часы в Москве продаются за "символичную" сумму в 1 543 500 рублей на сайте [kutuzov-watch](https://www.avito.ru/moskva/odezhda_obuv_aksessuary/a_bathing_ape_bape_sta_low_shark_white_2281374659 "Kutuzov Watch").
+Тамерлан также, не стесняеться демонстрировать часы, которые очень напоминают популярные Rolex Submariner "Hulk" Green. Нам трудно сказать, являются ли эти часы подделкой или оригиналом, но такие часы в Москве продаются за "символичную" сумму в 1 543 500 рублей на сайте [kutuzov-watch](https://kutuzov-watch.ru/product/v-rolex-submariner-green-hulk-3-116610lv/ "Kutuzov Watch").
 
 ![Часы]({{site.baseurl}}/assets/images/2025-09-03-photo-1.jpg)
 *Источник - личный канал Тамерлана @newyork001iq в Telegram*
