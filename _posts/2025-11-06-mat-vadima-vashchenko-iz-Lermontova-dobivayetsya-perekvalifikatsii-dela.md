@@ -9,6 +9,7 @@ image: /assets/images/2025-11-06-photo-1.jpg
 О происшествии сообщили региональные СМИ, включая [«Блокнот Ставрополь»](https://bloknot-stavropol.ru/news/klyap-vo-rtu-chuzhie-bryuki-i-shest-chaynikov-kipya-1848040).
 
 ![фото Вадима]({{site.baseurl}}/assets/images/2025-11-06-photo-2.jpg)
+
 *фото Вадима из семейного архива*
 {: .text-muted }
 
@@ -20,15 +21,11 @@ image: /assets/images/2025-11-06-photo-1.jpg
 
 Согласно материалам, опубликованным *«Блокнотом Ставрополь»*, на теле Вадима обнаружили множественные ожоги, резаные раны, следы побоев и удушения. Следствие квалифицировало преступление по статье *«умышленное причинение тяжкого вреда здоровью, повлекшее по неосторожности смерть человека».*
 
-<iframe src="https://vk.com/video_ext.php?oid=-58956239&id=456248580&hash=241c9beae911f008" width="640" height="360" frameborder="0" allowfullscreen="1" style="background-color: #000" allow="autoplay; encrypted-media; fullscreen; picture-in-picture"></iframe>
-*Допроса Следкома СК на место убийства. Источник - СК*
-{: .text-muted }
-
 Наталья Ващенко утверждает, что обвиняемые ранее уже отбывали тюремные сроки за убийства, но были освобождены после подписания контрактов с Минобороны. По данным матери, один из них, находясь в СИЗО, успел совершить аналогичное преступление.
 
 <div class="video-box" style="text-align:center; margin:0 auto;">
     <video width="640" height="480" id="player" playsinline controls>
-        <source src="/assets/images/video_2025-04-16_08-26-12.mp4" type="video/mp4" />
+        <source src="/assets/images/video-2025-04-16.mp4" type="video/mp4" />
     </video>
 </div>
 
