@@ -25,7 +25,7 @@ image: /assets/images/2025-11-06-photo-1.jpg
 
 <div class="video-box" style="text-align:center; margin:0 auto;">
     <video width="640" height="480" id="player" playsinline controls>
-        <source src="/assets/images/video-2025-04-16.mp4" type="video/mp4" />
+        <source src="/assets/images/20250416.mp4" type="video/mp4" />
     </video>
 </div>
 
