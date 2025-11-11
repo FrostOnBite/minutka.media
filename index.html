@@ -117,8 +117,46 @@ description: "minutka.media - голос тех, кого не услышат п
 {% endif %}
 {% endfor %}
 
-
 </div>
+
+    <div class="banner">
+      <div class="header-container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <h2 style="margin: 0;">Список погибших и пропавших без вести российских военных</h2>
+          <a href="https://200.zona.media/" target="_blank" style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; white-space: nowrap; margin-left: 20px;">
+            <span id="statsNumber">загрузка...</span>
+          </a>
+        </div>
+        
+        <div class="search-container">
+          <div class="search-input-wrapper">
+            <input 
+              type="text" 
+              id="searchInput" 
+              placeholder="Найти человека"
+              autocomplete="off"
+            >
+            <div class="search-icon">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="17" cy="17" r="6" stroke="white" stroke-width="1.8"></circle>
+                <path d="M21.5 21.5L24.5 24.5" stroke="white" stroke-width="1.9" stroke-linecap="square"></path>
+              </svg>
+            </div>
+          </div>
+          <div id="autocomplete-list" class="autocomplete-items"></div>
+        </div>
+      </div>
+
+      <!-- Карточка с полной информацией -->
+      <div id="fullInfoCard" class="full-info" style="position: relative;">
+        <button class="close-button" onclick="hideFullInfo()">×</button>
+        <div class="full-name" id="cardName"></div>
+        <div class="region-info" id="cardRegion"></div>
+        <div class="status-badge">Погиб</div>
+        <a id="cardLink" class="detail-link" href="#" target="_blank">Подробнее</a>
+      </div>
+    </div>
+
 </div>
 
 <div class="container mb-6">
