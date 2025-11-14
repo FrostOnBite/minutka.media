@@ -206,12 +206,49 @@
     </script>
 
 <script>
+document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.formspree-form').forEach(form => {
+    // Найдём (или создадим) контейнер для сообщений внутри формы
+    let messageBox = form.querySelector('.form-message');
+    if (!messageBox) {
+      messageBox = document.createElement('div');
+      messageBox.className = 'form-message mt-2';
+      messageBox.style.display = 'none';
+      // для удобства скринридеров
+      messageBox.setAttribute('role', 'status');
+      messageBox.setAttribute('aria-live', 'polite');
+      form.appendChild(messageBox);
+    }
+
+    const submitButtons = form.querySelectorAll('[type="submit"]');
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
+      // Проверка: email поле должно быть в форме и валидно
+      const emailInput = form.querySelector('input[type="email"][name="email"]');
+      if (emailInput && !emailInput.checkValidity()) {
+        messageBox.textContent = 'Пожалуйста, введите корректный e-mail.';
+        messageBox.classList.remove('text-success');
+        messageBox.classList.add('text-danger');
+        messageBox.style.display = 'block';
+        return;
+      }
+
+      // Собираем данные
       const data = new FormData(form);
-      const messageBox = form.querySelector('.form-message');
+
+      // Блокируем все submit-кнопки формы
+      submitButtons.forEach(btn => {
+        btn.disabled = true;
+        btn.dataset.originalText = btn.innerHTML;
+        // можно добавить индикатор отправки
+        btn.innerHTML = 'Отправка...';
+      });
+
+      // Спрячем предыдущее сообщение
+      messageBox.style.display = 'none';
+      messageBox.classList.remove('text-success', 'text-danger');
 
       try {
         const response = await fetch(form.action, {
@@ -220,24 +257,52 @@
           headers: { 'Accept': 'application/json' }
         });
 
+        // Formspree при успешной отправке возвращает 200 или 201, и/или JSON
         if (response.ok) {
-          messageBox.textContent = "Спасибо! Вы успешно подписались.";
-          messageBox.className = "form-message mt-2 text-success";
-          messageBox.style.display = "block";
+          messageBox.textContent = 'Спасибо! Вы успешно подписались.';
+          messageBox.classList.add('text-success');
           form.reset();
         } else {
-          messageBox.textContent = "Ошибка при отправке.";
-          messageBox.className = "form-message mt-2 text-danger";
-          messageBox.style.display = "block";
+          // Попробуем вытащить сообщение из ответа (если есть)
+          let errText = 'Ошибка при отправке.';
+          try {
+            const json = await response.json();
+            if (json && json.error) errText = json.error;
+            else if (json && json.message) errText = json.message;
+          } catch (parseErr) {
+            // ignore parse error
+          }
+          messageBox.textContent = errText;
+          messageBox.classList.add('text-danger');
+          console.error('Formspree response not ok:', response.status, response.statusText);
         }
       } catch (err) {
-        messageBox.textContent = "Ошибка сети.";
-        messageBox.className = "form-message mt-2 text-danger";
-        messageBox.style.display = "block";
+        messageBox.textContent = 'Ошибка сети. Попробуйте ещё раз.';
+        messageBox.classList.add('text-danger');
+        console.error('Fetch error:', err);
+      } finally {
+        // Показываем сообщение (если есть текст)
+        if (messageBox.textContent) messageBox.style.display = 'block';
+
+        // Разблокируем кнопки и восстановим текст
+        submitButtons.forEach(btn => {
+          btn.disabled = false;
+          if (btn.dataset.originalText !== undefined) {
+            btn.innerHTML = btn.dataset.originalText;
+            delete btn.dataset.originalText;
+          }
+        });
+
+        // Уберём сообщение через 6 секунд (опционально)
+        setTimeout(() => {
+          messageBox.style.display = 'none';
+        }, 6000);
       }
     });
   });
+});
 </script>
+
 
     <!-- Footer -->
     <footer class="bg-black border-top p-3 text-white small">
