@@ -2,13 +2,15 @@
 layout: null
 ---
 [
-  {% for post in site.posts %}
-  {
+{% assign sorted = site.posts | sort: "date" | reverse %}
+{% for post in sorted %}
+{
     "title": "{{ post.title | escape }}",
-    "url": "{{ post.url }}",
-    "date": "{{ post.date | date: '%Y-%m-%d' }}",
-    "excerpt": "{{ post.excerpt | strip_newlines | escape }}",
-    "image": "{{ post.image | default: post.featured_image }}"
-  }{% unless forloop.last %},{% endunless %}
-  {% endfor %}
+    "url": "{{ site.baseurl }}{{ post.url }}",
+    "date": "{{ post.date | date_to_xmlschema }}",
+    "excerpt": "{{ post.excerpt | strip_html | strip_newlines | truncate: 186 | escape }}",
+    "image": "{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image }}{% endif %}"
+}
+{% unless forloop.last %},{% endunless %}
+{% endfor %}
 ]
