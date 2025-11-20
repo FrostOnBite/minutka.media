@@ -142,10 +142,13 @@ description: "minutka.media - голос тех, кого не услышат п
     <div class="col-md-8 main-loop">
         
         <h4 class="spanborder"><span>Материалы</span></h4>
-        
-         {% for post in paginator.posts %}
+        {% assign sorted = site.posts | sort: "date" | reverse %}
+        {% for post in sorted limit: 10 %}
             {% include main-loop-card.html %}
         {% endfor %}
+
+        <div id="posts"></div>
+        <button id="loadMore" class="btn btn-dark rounded-0 w-100 mt-4">Загрузить ещё</button>
 
         <div class="mt-5">
          <!-- Pagination links -->
