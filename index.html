@@ -142,9 +142,10 @@ description: "minutka.media - голос тех, кого не услышат п
     <div class="col-md-8 main-loop">
         
         <h4 class="spanborder"><span>Материалы</span></h4>
-        
+
+        <!-- Контейнер для постов -->
         <div id="posts-container"></div>
-        
+
         <div class="mt-5 text-center">
             <button id="loadMore" class="btn btn-dark rounded-0 w-100">Загрузить ещё</button>
         </div>
@@ -158,70 +159,98 @@ description: "minutka.media - голос тех, кого не услышат п
 </div>
 
 <script>
-let posts = [];
-let displayedCount = 10;
-const postsPerLoad = 10;
+(function() {
+    let allPosts = [];
+    let displayedCount = 10;
+    const postsPerLoad = 10;
 
-// Загрузить все посты из JSON
-fetch('{{ site.baseurl }}/posts.json')
-    .then(response => response.json())
-    .then(data => {
-        posts = data;
-        renderPosts(0, displayedCount);
-        updateButtonState();
-    })
-    .catch(err => console.error('Ошибка загрузки постов:', err));
+    // Загрузить все посты из JSON
+    const postsUrl = '{{ site.baseurl }}/posts.json';
+    console.log('Загружаю посты с:', postsUrl);
 
-function renderPosts(start, end) {
-    const container = document.getElementById('posts-container');
-    const fragment = document.createDocumentFragment();
-    
-    for (let i = start; i < end && i < posts.length; i++) {
-        const post = posts[i];
-        const postHTML = `
-            <div class="card border-0 mb-4 box-shadow">
-                <div class="row align-items-stretch">
-                    <div class="col-md-5">
-                        <img class="img-fluid" src="${post.image}" alt="${post.title}">
-                    </div>
-                    <div class="col-md-7">
-                        <div class="card-block">
-                            <h2 class="card-title"><a href="${post.url}" title="Visit Post">${post.title}</a></h2>
-                            <h6 class="card-subtitle mb-2 text-muted">${new Date(post.date).toLocaleDateString('ru-RU')}</h6>
-                            <p class="card-text">${post.excerpt}</p>
-                            <a href="${post.url}" class="btn btn-dark">Читать далее</a>
-                        </div>
+    fetch(postsUrl)
+        .then(response => {
+            console.log('Статус ответа:', response.status);
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            return response.json();
+        })
+        .then(data => {
+            console.log('Загружено постов:', data.length);
+            allPosts = data;
+            if (allPosts.length > 0) {
+                renderPosts(0, displayedCount);
+                updateButtonState();
+            } else {
+                console.warn('JSON пуст или некорректен');
+                document.getElementById('posts-container').innerHTML = '<p>Посты не найдены</p>';
+            }
+        })
+        .catch(err => {
+            console.error('Ошибка загрузки постов:', err);
+            document.getElementById('posts-container').innerHTML = '<p>Ошибка загрузки постов</p>';
+        });
+
+    function renderPosts(start, end) {
+        const container = document.getElementById('posts-container');
+        
+        for (let i = start; i < end && i < allPosts.length; i++) {
+            const post = allPosts[i];
+            
+            // Форматирование даты
+            const date = new Date(post.date);
+            const months = ['January', 'February', 'March', 'April', 'May', 'June', 
+                          'July', 'August', 'September', 'October', 'November', 'December'];
+            const formattedDate = `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+
+            const postHTML = `
+                <div class="mb-5 justify-content-between main-loop-card">
+                    ${post.image ? `
+                        <a href="${post.url}">
+                            <div class="w-100 p-5 d-md-block grayscale" style="background-size:cover;background-position: 0% 40%;background-image:url('${post.image}');">	
+                            </div>
+                        </a>
+                    ` : ''}
+                    <div class="pr-3 mt-3">
+                        <h2 class="mb-1">
+                            <a class="text-dark" href="${post.url}">${post.title}</a>
+                        </h2>
+                        <p class="excerpt">
+                            ${post.excerpt}
+                        </p>
+                        <small class="text-muted">
+                            <time class="timeago" datetime="${post.date}">
+                                ${formattedDate}
+                            </time>
+                        </small>
                     </div>
                 </div>
-            </div>
-        `;
-        
-        const div = document.createElement('div');
-        div.innerHTML = postHTML;
-        fragment.appendChild(div.firstElementChild);
+            `;
+            
+            const div = document.createElement('div');
+            div.innerHTML = postHTML;
+            container.appendChild(div.firstElementChild);
+        }
     }
-    
-    container.appendChild(fragment);
-}
 
-function updateButtonState() {
-    const btn = document.getElementById('loadMore');
-    if (displayedCount >= posts.length) {
-        btn.disabled = true;
-        btn.textContent = 'Все посты загружены';
-    } else {
-        btn.disabled = false;
-        btn.textContent = 'Загрузить ещё';
+    function updateButtonState() {
+        const btn = document.getElementById('loadMore');
+        if (displayedCount >= allPosts.length) {
+            btn.disabled = true;
+            btn.textContent = 'Все посты загружены';
+        } else {
+            btn.disabled = false;
+            btn.textContent = 'Загрузить ещё';
+        }
     }
-}
 
-document.getElementById('loadMore').addEventListener('click', function() {
-    const nextCount = displayedCount + postsPerLoad;
-    renderPosts(displayedCount, nextCount);
-    displayedCount = nextCount;
-    updateButtonState();
-});</script>
-
+    document.getElementById('loadMore').addEventListener('click', function() {
+        const nextCount = displayedCount + postsPerLoad;
+        renderPosts(displayedCount, nextCount);
+        displayedCount = nextCount;
+        updateButtonState();
+    });
+})();
+</script>
 
 
 </div>
