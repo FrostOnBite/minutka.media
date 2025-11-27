@@ -142,38 +142,11 @@ description: "minutka.media - голос тех, кого не услышат п
     <div class="col-md-8 main-loop">
         
         <h4 class="spanborder"><span>Материалы</span></h4>
-
-        {% for post in paginator.posts %}
-            {% include main-loop-card.html %}
-        {% endfor %}
-
-        <div class="mt-5">
-         <!-- Pagination links -->
-            {% if paginator.total_pages > 1 %}
-            <ul class="pagination"> 
-              {% if paginator.previous_page %}
-                <li class="page-item"><a  href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a></li>
-              {% else %}
-                <li class="page-item disabled"><span class="prev">&laquo;</span></li>
-              {% endif %}
-
-              {% for page in (1..paginator.total_pages) %}
-                {% if page == paginator.page %}
-                <li class="page-item disabled"><span class="webjeda">{{ page }}</span></li>
-                {% elsif page == 1 %}
-                <li class="page-item"><a  href="{{site.baseurl}}/">{{ page }}</a></li>
-                {% else %}
-                <li class="page-item"><a  href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
-                {% endif %}
-              {% endfor %}
-
-              {% if paginator.next_page %}
-                <li class="page-item"><a  href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a></li>
-              {% else %}
-                <li class="page-item disabled"><span class="next">&raquo;</span></li>
-              {% endif %}
-            </ul>
-            {% endif %}      
+        
+        <div id="posts-container"></div>
+        
+        <div class="mt-5 text-center">
+            <button id="loadMore" class="btn btn-dark rounded-0 w-100">Загрузить ещё</button>
         </div>
         
     </div>
@@ -183,6 +156,71 @@ description: "minutka.media - голос тех, кого не услышат п
     </div>
     
 </div>
+
+<script>
+let posts = [];
+let displayedCount = 10;
+const postsPerLoad = 10;
+
+// Загрузить все посты из JSON
+fetch('{{ site.baseurl }}/posts.json')
+    .then(response => response.json())
+    .then(data => {
+        posts = data;
+        renderPosts(0, displayedCount);
+        updateButtonState();
+    })
+    .catch(err => console.error('Ошибка загрузки постов:', err));
+
+function renderPosts(start, end) {
+    const container = document.getElementById('posts-container');
+    const fragment = document.createDocumentFragment();
+    
+    for (let i = start; i < end && i < posts.length; i++) {
+        const post = posts[i];
+        const postHTML = `
+            <div class="card border-0 mb-4 box-shadow">
+                <div class="row align-items-stretch">
+                    <div class="col-md-5">
+                        <img class="img-fluid" src="${post.image}" alt="${post.title}">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-block">
+                            <h2 class="card-title"><a href="${post.url}" title="Visit Post">${post.title}</a></h2>
+                            <h6 class="card-subtitle mb-2 text-muted">${new Date(post.date).toLocaleDateString('ru-RU')}</h6>
+                            <p class="card-text">${post.excerpt}</p>
+                            <a href="${post.url}" class="btn btn-dark">Читать далее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        const div = document.createElement('div');
+        div.innerHTML = postHTML;
+        fragment.appendChild(div.firstElementChild);
+    }
+    
+    container.appendChild(fragment);
+}
+
+function updateButtonState() {
+    const btn = document.getElementById('loadMore');
+    if (displayedCount >= posts.length) {
+        btn.disabled = true;
+        btn.textContent = 'Все посты загружены';
+    } else {
+        btn.disabled = false;
+        btn.textContent = 'Загрузить ещё';
+    }
+}
+
+document.getElementById('loadMore').addEventListener('click', function() {
+    const nextCount = displayedCount + postsPerLoad;
+    renderPosts(displayedCount, nextCount);
+    displayedCount = nextCount;
+    updateButtonState();
+});</script>
 
 
 
