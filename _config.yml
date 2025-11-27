@@ -1,7 +1,7 @@
 # Site
 name: 'minutka.media'
 description: 'minutka.media - голос тех, кого не услышат по телевизору. Только факты и люди.'
-baseurl: 'http://www.minutka.media'
+baseurl: 'https://www.minutka.media'
 disqus: 'minutka-media'
 email: 'knock@minutka.media'
 mailchimp-list: ''
