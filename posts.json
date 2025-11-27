@@ -9,7 +9,7 @@ layout: null
     "url": "{{ site.baseurl }}{{ post.url }}",
     "date": "{{ post.date | date_to_xmlschema }}",
     "excerpt": "{{ post.excerpt | strip_html | strip_newlines | truncate: 186 | escape }}",
-    "image": "{% if post.image contains '://' %}{{ post.image }}{% else %}/{{ post.image }}{% endif %}"
+    "image": "{% if post.image contains '://' %}{{ post.image }}{% else %}{{ post.image }}{% endif %}"
 }
 {% unless forloop.last %},{% endunless %}
 {% endfor %}
