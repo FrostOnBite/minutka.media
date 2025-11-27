@@ -166,27 +166,22 @@ description: "minutka.media - голос тех, кого не услышат п
 
     // Загрузить все посты из JSON
     const postsUrl = '{{ site.baseurl }}/posts.json';
-    console.log('Загружаю посты с:', postsUrl);
 
     fetch(postsUrl)
         .then(response => {
-            console.log('Статус ответа:', response.status);
             if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
             return response.json();
         })
         .then(data => {
-            console.log('Загружено постов:', data.length);
             allPosts = data;
             if (allPosts.length > 0) {
                 renderPosts(0, displayedCount);
                 updateButtonState();
             } else {
-                console.warn('JSON пуст или некорректен');
                 document.getElementById('posts-container').innerHTML = '<p>Посты не найдены</p>';
             }
         })
         .catch(err => {
-            console.error('Ошибка загрузки постов:', err);
             document.getElementById('posts-container').innerHTML = '<p>Ошибка загрузки постов</p>';
         });
 
