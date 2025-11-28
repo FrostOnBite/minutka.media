@@ -10,7 +10,7 @@ layout: default
 						<h1 class="display-4 mb-4 article-headline">{{ page.title }}</h1>
 						<div class="d-flex align-items-center">
 							{% if author.avatar %}
-							<img class="rounded-circle" src="{{site.baseurl}}/{{author.avatar}}" alt="{{author.name}}" width="70"/>
+							<img class="rounded-circle" src="{{author.avatar}}" alt="{{author.name}}" width="70"/>
 							{% endif %}
 							<small class="ml-3"> {{ author.name }} 
 								<span class="text-muted d-block mt-1">
@@ -23,7 +23,7 @@ layout: default
 					</div>
 					{% if page.image %}
 					<div class="col-md-6 pr-0 align-self-center">
-						<img src="{% if page.image contains "://" %}{{ page.image }}{% else %}{{ site.baseurl }}/{{ page.image }}{% endif %}" alt="{{ page.title }}">
+						<img src="{% if page.image contains "://" %}{{ page.image }}{% else %}{{ page.image }}{% endif %}" alt="{{ page.title }}">
 					</div>
 					{% endif %}
 				</div>
