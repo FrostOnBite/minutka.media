@@ -6,19 +6,9 @@
     let lunrDocuments = null;
     let indexLoaded = false;
 
-    // Данные для индекса (генерируются Jekyll)
+    // Данные для индекса - ТОЛЬКО ПОСТЫ
     {% assign counter = 0 %}
-    window.lunrDocumentsData = [{% for page in site.pages %}{% if page.url contains '.xml' or page.url contains 'assets' %}{% else %}{
-        "id": {{ counter }},
-        "url": "{{ site.url }}{{site.baseurl}}{{ page.url }}",
-        "title": "{{ page.title }}",
-        "body": "{{ page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | replace: '</p>', ' ' | strip_html | strip_newlines | replace: '  ', ' ' | replace: '"', ' ' }}"{% assign counter = counter | plus: 1 %}
-        }, {% endif %}{% endfor %}{% for page in site.without-plugin %}{
-        "id": {{ counter }},
-        "url": "{{ site.url }}{{site.baseurl}}{{ page.url }}",
-        "title": "{{ page.title }}",
-        "body": "{{ page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | replace: '</p>', ' ' | strip_html | strip_newlines | replace: '  ', ' ' | replace: '"', ' ' }}"{% assign counter = counter | plus: 1 %}
-        }, {% endfor %}{% for page in site.posts %}{
+    window.lunrDocumentsData = [{% for page in site.posts %}{
         "id": {{ counter }},
         "url": "{{ site.url }}{{site.baseurl}}{{ page.url }}",
         "title": "{{ page.title }}",
@@ -72,7 +62,7 @@
         console.log('Results found:', results.length);
 
         const modalHeader = document.getElementById('modtit');
-        modalHeader.innerHTML = "<h5 class='modal-title'>Результаты поиска: '" + term + "'</h5>";
+        modalHeader.textContent = "Результаты поиска: '" + term + "'";
 
         const ul = document.querySelector('#lunrsearchresults ul');
         let html = '';
@@ -103,13 +93,11 @@
         const modal = document.getElementById('lunrsearchresults');
         const modalContent = document.querySelector('#lunrsearchresults .modal-content');
         
-        // Закрыть если клик на кнопку закрытия
-        if (e.target.id === 'btnx') {
+        if (e.target.closest('button[onclick="closeLunrSearch()"]')) {
             closeLunrSearch();
             return;
         }
         
-        // Закрыть если клик вне modal-content
         if (modal && modal.style.display === 'block') {
             if (modalContent && !modalContent.contains(e.target)) {
                 closeLunrSearch();
@@ -135,6 +123,14 @@
         justify-content: center;
         overflow-y: auto;
         padding: 20px;
+    }
+
+    #lunrsearchresults .modal-dialog {
+        max-width: 600px;
+    }
+
+    #lunrsearchresults .modal-content {
+        border-radius: 0;
     }
 
     .lunrsearchresult {
