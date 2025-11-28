@@ -4,12 +4,10 @@ layout: null
 [
 {% assign sorted = site.posts | sort: "date" | reverse %}
 {% for post in sorted %}
-{% assign m = post.date | date: "%-m" | minus: 1 %}
 {
     "title": "{{ post.title | escape }}",
     "url": "{{ site.baseurl }}{{ post.url }}",
     "date": "{{ post.date | date_to_xmlschema }}",
-    "dateRu": "{{ post.date | date: '%-d' }} {{ site.data.months[m] }} {{ post.date | date: '%Y' }}",
     "excerpt": "{{ post.excerpt | strip_html | strip_newlines | truncate: 186 | escape }}",
     "image": "{% if post.image contains '://' %}{{ post.image }}{% else %}{{ post.image }}{% endif %}"
 }
