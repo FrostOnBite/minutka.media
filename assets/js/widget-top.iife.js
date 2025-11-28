@@ -137,8 +137,6 @@ var ThetruestoryWidgetTop=function(m){"use strict";var Rt=Object.defineProperty;
         border-radius: var(--widget-border-radius);
       }
       header {
-        padding-top: var(--header-padding-top);
-        border-top: var(--header-border-top-width) solid var(--header-border-top-color-normal);
         font: var(--header-text-font-weight) var(--header-text-font-size) /
           var(--header-text-line-height) var(--header-text-font-family);
         letter-spacing: var(--header-text-letter-spacing);
