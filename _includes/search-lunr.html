@@ -40,6 +40,7 @@
         lunrIdx = lunr(function () {
             this.ref('id');
             this.field('title', { boost: 10 });
+            this.field('body', { boost: 5 });
 
             lunrDocuments.forEach(function (doc) {
                 this.add(doc);
@@ -97,9 +98,23 @@
         if (e.key === 'Escape') closeLunrSearch();
     });
 
-    // Закрытие при клике на кнопку
+    // Закрытие при клике на кнопку или вне модального окна
     document.addEventListener('click', function(e) {
-        if (e.target.id === 'btnx') closeLunrSearch();
+        const modal = document.getElementById('lunrsearchresults');
+        const modalContent = document.querySelector('#lunrsearchresults .modal-content');
+        
+        // Закрыть если клик на кнопку закрытия
+        if (e.target.id === 'btnx') {
+            closeLunrSearch();
+            return;
+        }
+        
+        // Закрыть если клик вне modal-content
+        if (modal && modal.style.display === 'block') {
+            if (modalContent && !modalContent.contains(e.target)) {
+                closeLunrSearch();
+            }
+        }
     });
 
     window.closeLunrSearch = closeLunrSearch;
