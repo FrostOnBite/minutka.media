@@ -3,7 +3,6 @@ function Marquee(selector, speed) {
   const clone = parentSelector.innerHTML;
   const firstElement = parentSelector.children[0];
   let i = 0;
-  console.log(firstElement);
   parentSelector.insertAdjacentHTML('beforeend', clone);
   parentSelector.insertAdjacentHTML('beforeend', clone);
 
