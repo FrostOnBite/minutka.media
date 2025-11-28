@@ -58,21 +58,27 @@
         document.body.classList.add('modal-open');
 
         console.log('Searching for:', term);
-        const results = lunrIdx.search(term);
+        
+        // Простой поиск по тексту для русского языка
+        const searchTerm = term.toLowerCase();
+        const results = lunrDocuments.filter(doc => 
+            doc.title.toLowerCase().includes(searchTerm) || 
+            doc.body.toLowerCase().includes(searchTerm)
+        );
+        
         console.log('Results found:', results.length);
 
         const modalHeader = document.getElementById('modtit');
-        modalHeader.textContent = "Результаты поиска: '" + term + "'";
+        modalHeader.querySelector('.modal-title').textContent = "Результаты поиска: '" + term + "'";
 
         const ul = document.querySelector('#lunrsearchresults ul');
         let html = '';
 
         if (results.length > 0) {
             results.slice(0, 50).forEach(function(result) {
-                const ref = result['ref'];
-                const url = lunrDocuments[ref]['url'];
-                const title = lunrDocuments[ref]['title'];
-                const body = lunrDocuments[ref]['body'].substring(0, 160) + '...';
+                const url = result.url;
+                const title = result.title;
+                const body = result.body.substring(0, 160) + '...';
                 html += "<li class='lunrsearchresult'><a href='" + url + "'><span class='title'>" + title + "</span><br /><small><span class='body'>" + body + "</span><br /><span class='url'>" + url + "</span></small></a></li>";
             });
         } else {
