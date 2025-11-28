@@ -345,11 +345,9 @@
           const response = await fetch(file);
           const part = await response.json();
           allData.push(...part);
-          console.log(`Загружена часть: ${file}, записей: ${part.length}`);
         }
 
         database = allData;
-        console.log(`База полностью загружена: ${database.length} записей`);
         document.getElementById('statsNumber').textContent = database.length.toLocaleString('ru-RU');
 
       } catch (error) {
