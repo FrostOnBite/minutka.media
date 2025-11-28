@@ -40,7 +40,6 @@
         lunrIdx = lunr(function () {
             this.ref('id');
             this.field('title', { boost: 10 });
-            this.field('body', { boost: 5 });
 
             lunrDocuments.forEach(function (doc) {
                 this.add(doc);
