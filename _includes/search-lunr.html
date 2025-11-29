@@ -20,24 +20,12 @@
         console.log('First document:', window.lunrDocumentsData[0]);
     }
 
-    // Ленивая инициализация индекса
+    // Ленивая инициализация индекса (больше не нужна, но оставляем для совместимости)
     function initLunrIndex() {
         if (indexLoaded) return;
-        
         indexLoaded = true;
         lunrDocuments = window.lunrDocumentsData;
-
-        lunrIdx = lunr(function () {
-            this.ref('id');
-            this.field('title', { boost: 10 });
-            this.field('body', { boost: 5 });
-
-            lunrDocuments.forEach(function (doc) {
-                this.add(doc);
-            }, this);
-        });
-
-        console.log('Lunr index initialized');
+        console.log('Documents ready for search');
     }
 
     function closeLunrSearch() {
@@ -62,8 +50,7 @@
         // Простой поиск по тексту для русского языка
         const searchTerm = term.toLowerCase();
         const results = lunrDocuments.filter(doc => 
-            doc.title.toLowerCase().includes(searchTerm) || 
-            doc.body.toLowerCase().includes(searchTerm)
+            doc.title.toLowerCase().includes(searchTerm)
         );
         
         console.log('Results found:', results.length);
@@ -78,8 +65,8 @@
             results.slice(0, 50).forEach(function(result) {
                 const url = result.url;
                 const title = result.title;
-                const body = result.body.substring(0, 160) + '...';
-                html += "<li class='lunrsearchresult'><a href='" + url + "'><span class='title'>" + title + "</span><br /><small><span class='body'>" + body + "</span><br /><span class='url'>" + url + "</span></small></a></li>";
+                const date = result.date;
+                html += "<li class='lunrsearchresult'><a href='" + url + "'><small class='text-muted'>" + date + "</small><br /><span class='title'>" + title + "</span></a></li>";
             });
         } else {
             html = "<li class='lunrsearchresult'>Ничего не найдено</li>";
