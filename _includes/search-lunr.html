@@ -16,16 +16,12 @@
         }{% if forloop.last %}{% else %}, {% endif %}{% endfor %}];
 
     console.log('Lunr documents loaded:', window.lunrDocumentsData.length);
-    if (window.lunrDocumentsData.length > 0) {
-        console.log('First document:', window.lunrDocumentsData[0]);
-    }
 
     // Ленивая инициализация индекса (больше не нужна, но оставляем для совместимости)
     function initLunrIndex() {
         if (indexLoaded) return;
         indexLoaded = true;
         lunrDocuments = window.lunrDocumentsData;
-        console.log('Documents ready for search');
     }
 
     function closeLunrSearch() {
@@ -45,15 +41,7 @@
         modal.style.display = 'block';
         document.body.classList.add('modal-open');
 
-        console.log('Searching for:', term);
-        
-        // Простой поиск по тексту для русского языка
         const searchTerm = term.toLowerCase();
-        const results = lunrDocuments.filter(doc => 
-            doc.title.toLowerCase().includes(searchTerm)
-        );
-        
-        console.log('Results found:', results.length);
 
         const modalHeader = document.getElementById('modtit');
         modalHeader.querySelector('.modal-title').textContent = "Результаты поиска: '" + term + "'";
