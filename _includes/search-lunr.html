@@ -42,6 +42,9 @@
         document.body.classList.add('modal-open');
 
         const searchTerm = term.toLowerCase();
+        const results = lunrDocuments.filter(doc => 
+            doc.title.toLowerCase().includes(searchTerm)
+        );
 
         const modalHeader = document.getElementById('modtit');
         modalHeader.querySelector('.modal-title').textContent = "Результаты поиска: '" + term + "'";
