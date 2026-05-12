@@ -192,11 +192,6 @@ description: "minutka.media - голос тех, кого не услышат п
             const post = allPosts[i];
             
             // Форматирование даты
-            const date = new Date(post.date);
-            const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
-                          'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
-            const formattedDate = `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
-
             const postHTML = `
                 <div class="mb-5 justify-content-between main-loop-card">
                     ${post.image ? `
@@ -213,9 +208,7 @@ description: "minutka.media - голос тех, кого не услышат п
                             ${post.excerpt}
                         </p>
                         <small class="text-muted">
-                            <time class="timeago" datetime="${post.date}">
-                                ${formattedDate}
-                            </time>
+                            <time class="timeago" datetime="${post.date}"></time>
                         </small>
                     </div>
                 </div>
