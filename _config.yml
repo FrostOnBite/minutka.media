@@ -3,7 +3,6 @@ name: 'minutka.media'
 description: 'minutka.media - голос тех, кого не услышат по телевизору. Только факты и люди.'
 url: 'https://www.minutka.media'
 baseurl: ''
-disqus: 'minutka-media'
 email: 'knock@minutka.media'
 mailchimp-list: ''
 
