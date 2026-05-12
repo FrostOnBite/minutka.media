@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "«Воспитание или Допрос?»: что не так в белгородской школе «Формула успеха»"
+telegram_post: minutka_media/172
 author: adelina
 image: assets/images/2025-10-20-photo-0.jpg
 tags: [sticky]
