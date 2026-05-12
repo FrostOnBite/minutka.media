@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Обещал быть военным — сын полковника Карурова и его жизнь в Москве на фоне нужды бойцов 22-го мотострелкового полка."
+telegram_post: minutka_media/142
 author: kira
 image: /assets/images/2025-09-03-photo-2.jpg
 ---
