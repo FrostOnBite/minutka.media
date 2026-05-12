@@ -97,7 +97,12 @@
       font-weight: 600;
       color: #333;
       font-size: 16px;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
+    }
+
+    .item-dates {
+      font-size: 13px;
+      color: #888;
     }
 
     .highlight {
@@ -133,11 +138,6 @@
 
     .item-link:hover {
       text-decoration: underline;
-    }
-
-    .highlight {
-      background-color: #ffeb3b;
-      font-weight: 600;
     }
 
     .no-results,
@@ -191,7 +191,13 @@
       font-style: italic;
       font-weight: 700;
       color: #1a1a2e;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
+    }
+
+    .card-dates {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 20px;
     }
 
     .region-info {
@@ -273,14 +279,14 @@
     .autocomplete-items.show {
       animation: fadeIn 0.2s ease;
     }
-    /* Исправление обрезания выпадающего списка */
+
     .wrapper {
       overflow: visible;
     }
 
     .autocomplete-items {
       position: absolute;
-      z-index: 9999; /* повыше, чтобы точно перекрывал все элементы wrapper */
+      z-index: 9999;
     }
   </style>
 
@@ -317,6 +323,7 @@
       <div id="fullInfoCard" class="full-info" style="position: relative;">
         <button class="close-button" onclick="hideFullInfo()">×</button>
         <div class="full-name" id="cardName"></div>
+        <div class="card-dates" id="cardDates"></div>
         <div class="region-info" id="cardRegion"></div>
         <div class="status-badge">Погиб</div>
         <a id="cardLink" class="detail-link" href="#" target="_blank">Посмотреть на странице проекта «Медиазона»</a>
@@ -328,26 +335,31 @@
     let database = [];
     let isLoading = false;
 
-    // Загрузка базы данных из нескольких файлов
+    // Загрузка базы из одного gz-файла
     async function loadDatabase() {
       isLoading = true;
-      const allData = [];
-
-      // Добавь сюда все части, которые получатся после разделения JSON
-      const parts = [
-        '/data/zona_part1.json',
-        '/data/zona_part2.json',
-        '/data/zona_part3.json'
-      ];
-
       try {
-        for (const file of parts) {
-          const response = await fetch(file);
-          const part = await response.json();
-          allData.push(...part);
+        const response = await fetch('/data/zona_database.json.gz');
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+        // Браузер сам распакует gzip если сервер отдаёт с Content-Encoding: gzip
+        // Если файл отдаётся как есть — распакуем вручную через DecompressionStream
+        const contentEncoding = response.headers.get('Content-Encoding');
+        let json;
+
+        if (contentEncoding && contentEncoding.includes('gzip')) {
+          // Сервер уже распаковал
+          json = await response.json();
+        } else {
+          // Распаковываем вручную
+          const blob = await response.blob();
+          const ds = new DecompressionStream('gzip');
+          const decompressedStream = blob.stream().pipeThrough(ds);
+          const decompressedResponse = new Response(decompressedStream);
+          json = await decompressedResponse.json();
         }
 
-        database = allData;
+        database = json;
         document.getElementById('statsNumber').textContent = database.length.toLocaleString('ru-RU');
 
       } catch (error) {
@@ -361,61 +373,59 @@
     // Поиск
     function searchDatabase(query) {
       if (!query || query.length < 2) return [];
-      
       const searchTerm = query.toLowerCase();
-      
-      const results = database.filter(person => 
+      const results = database.filter(person =>
         person.name.toLowerCase().includes(searchTerm)
       );
-      
-      console.log(`Поиск "${query}": найдено ${results.length} из ${database.length}`);
-      
       return results.slice(0, 50);
     }
 
     // Подсветка совпадений
     function highlightMatch(text, query) {
-      const regex = new RegExp(`(${query})`, 'gi');
+      const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
       return text.replace(regex, '<span class="highlight">$1</span>');
+    }
+
+    // Форматирование дат: "01.05.1990 — 15.03.2023"
+    function formatDates(person) {
+      if (!person.birth_date && !person.death_date) return '';
+      const birth = person.birth_date || '?';
+      const death = person.death_date || '?';
+      return `${birth} — ${death}`;
+    }
+
+    // Форматирование текста (убираем подчёркивания, капитализируем)
+    function formatText(text) {
+      if (!text) return '';
+      return text
+        .replace(/_/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .toLowerCase()
+        .replace(/(^|\s)\S/g, (a) => a.toUpperCase());
     }
 
     // Показ полной карточки
     function showFullInfo(person) {
       const card = document.getElementById('fullInfoCard');
-      const nameEl = document.getElementById('cardName');
-      const regionEl = document.getElementById('cardRegion');
-      const linkEl = document.getElementById('cardLink');
 
-      nameEl.textContent = person.name;
-      
-      // Формируем информацию о регионе и подразделении
+      document.getElementById('cardName').textContent = person.name;
+
+      // Даты
+      const datesEl = document.getElementById('cardDates');
+      const dates = formatDates(person);
+      datesEl.textContent = dates;
+      datesEl.style.display = dates ? 'block' : 'none';
+
+      // Регион и подразделение
       let regionHTML = '';
-      
-      function formatText(text) {
-        if (!text) return '';
-        return text
-          .replace(/_/g, ' ')
-          .replace(/\s+/g, ' ')
-          .trim()
-          .toLowerCase()
-          .replace(/(^|\s)\S/g, (a) => a.toUpperCase());
-      }
+      if (person.region) regionHTML = formatText(person.region);
+      if (person.unit)   regionHTML += (regionHTML ? ', ' : '') + formatText(person.unit);
+      document.getElementById('cardRegion').textContent = regionHTML || 'Регион не указан';
 
-      if (person.region) {
-        regionHTML = formatText(person.region);
-      }
-
-      if (person.unit) {
-        regionHTML += (regionHTML ? ', ' : '') + formatText(person.unit);
-      }
-
-      regionEl.textContent = regionHTML || 'Регион не указан';
-      
-      linkEl.href = person.url;
+      document.getElementById('cardLink').href = person.url;
 
       card.classList.add('show');
-      
-      // Скроллим к карточке
       setTimeout(() => {
         card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }, 100);
@@ -423,46 +433,52 @@
 
     // Скрытие полной карточки
     function hideFullInfo() {
-      const card = document.getElementById('fullInfoCard');
-      card.classList.remove('show');
+      document.getElementById('fullInfoCard').classList.remove('show');
     }
 
     // Показ автокомплита
     function showAutocomplete(results, query) {
       const container = document.getElementById('autocomplete-list');
       container.innerHTML = '';
-      
+
       if (isLoading) {
         container.innerHTML = '<div class="loading"><span class="spinner"></span></div>';
         container.classList.add('show');
         return;
       }
-      
+
       if (results.length === 0) {
         container.innerHTML = '<div class="no-results">Ничего не найдено</div>';
         container.classList.add('show');
         return;
       }
-      
+
       results.forEach((person) => {
         const item = document.createElement('div');
         item.className = 'autocomplete-item';
-        
-        // Просто имя с подсветкой
+
         const nameDiv = document.createElement('div');
         nameDiv.className = 'item-name';
         nameDiv.innerHTML = highlightMatch(person.name, query);
         item.appendChild(nameDiv);
-        
-        // Клик показывает полную карточку
+
+        // Даты в подсказке
+        const dates = formatDates(person);
+        if (dates) {
+          const datesDiv = document.createElement('div');
+          datesDiv.className = 'item-dates';
+          datesDiv.textContent = dates;
+          item.appendChild(datesDiv);
+        }
+
         item.addEventListener('click', () => {
           showFullInfo(person);
           hideAutocomplete();
         });
-        
+
         container.appendChild(item);
       });
-      
+
       container.classList.add('show');
     }
 
@@ -480,25 +496,20 @@
 
     searchInput.addEventListener('input', (e) => {
       const query = e.target.value.trim();
-      
       clearTimeout(searchTimeout);
-      
       if (query.length < 2) {
         hideAutocomplete();
         return;
       }
-      
       searchTimeout = setTimeout(() => {
-        const results = searchDatabase(query);
-        showAutocomplete(results, query);
+        showAutocomplete(searchDatabase(query), query);
       }, 150);
     });
 
     searchInput.addEventListener('focus', (e) => {
       const query = e.target.value.trim();
       if (query.length >= 2) {
-        const results = searchDatabase(query);
-        showAutocomplete(results, query);
+        showAutocomplete(searchDatabase(query), query);
       }
     });
 
@@ -511,7 +522,7 @@
       const container = document.getElementById('autocomplete-list');
       const items = container.querySelectorAll('.autocomplete-item');
       const activeItem = container.querySelector('.autocomplete-item.active');
-      
+
       if (e.key === 'ArrowDown') {
         e.preventDefault();
         if (!activeItem && items.length > 0) {
@@ -530,9 +541,7 @@
         }
       } else if (e.key === 'Enter') {
         e.preventDefault();
-        if (activeItem) {
-          activeItem.click();
-        }
+        if (activeItem) activeItem.click();
       } else if (e.key === 'Escape') {
         hideAutocomplete();
       }
