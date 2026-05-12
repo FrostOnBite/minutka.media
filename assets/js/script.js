@@ -1,5 +1,6 @@
 function Marquee(selector, speed) {
   const parentSelector = document.querySelector(selector);
+  if (!parentSelector) return;
   const clone = parentSelector.innerHTML;
   const firstElement = parentSelector.children[0];
   let i = 0;
