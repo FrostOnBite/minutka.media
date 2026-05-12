@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Неофициальные обмены пленными на фронте: риски для командиров и особенности процесса"
+telegram_post: minutka_media/157
 author: adelina
 image: /assets/images/2025-09-16-photo-1.jpg
 ---
