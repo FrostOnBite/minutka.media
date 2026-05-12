@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "«Шесть раз бегали кипятить чайник». Мать убитого Вадима Ващенко из Лермонтова добивается переквалификации дела"
+telegram_post: minutka_media/193
 author: adelina
 image: /assets/images/2025-11-06-photo-1.jpg
 ---
