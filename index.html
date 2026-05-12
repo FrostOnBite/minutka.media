@@ -193,9 +193,9 @@ description: "minutka.media - голос тех, кого не услышат п
             
             // Форматирование даты
             const date = new Date(post.date);
-            const months = ['January', 'February', 'March', 'April', 'May', 'June', 
-                          'July', 'August', 'September', 'October', 'November', 'December'];
-            const formattedDate = `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+            const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
+                          'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+            const formattedDate = `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
 
             const postHTML = `
                 <div class="mb-5 justify-content-between main-loop-card">
