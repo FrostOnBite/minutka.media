@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "«Безвестный полк» как политическая угроза: ФСБ против родственников пропавших солдат"
+telegram_post: minutka_media/228
 author: adelina
 image: /assets/images/photo_2026-06-21_16-41-26.jpg
 ---
