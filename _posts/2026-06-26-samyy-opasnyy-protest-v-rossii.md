@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Самый опасный протест в России еще не начался: Именно поэтому за ним внимательно следят силовики"
-telegram_post: minutka_media/228
+telegram_post: minutka_media/250
 author: adelina
 image: /assets/images/photo_2026-06-26_10-18-00.jpg
 ---
