@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "«Мы нашли его среди неизвестных». Как родственники российских военных сами ищут погибших на закрытых кладбищах Донбасса"
-telegram_post: minutka_media/228
+telegram_post: minutka_media/338
 author: adelina
 image: /assets/images/2026-08-04-photo-0.jpg
 ---
