@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "«Он сказал: До встречи. Люблю тебя. Последний разговор Руслана Гауса перед трагедией, которую следствие назвало «неосторожной охотой»"
-telegram_post: minutka_media/338
+telegram_post: minutka_media/343
 author: kira
 image: /assets/images/2026-08-07-photo-0.jpg
 ---
