@@ -7,13 +7,3 @@ image: assets/images/og-preview.jpg
 author: kira
 sitemap: false
 ---
-
-<div class="mm-breakout">
-{% include map.html %}
-</div>
-
-Пока следствие завершает расследование, часть особо опасных преступников получает шанс вернуться на свободу...
-
-### Как это работает
-
-Текст идёт как обычно, в узкой колонке...
