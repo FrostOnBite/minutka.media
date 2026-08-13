@@ -1,9 +1,11 @@
 ---
 layout: investigation
 title: "Искупили кровью: как осуждённые уходят на СВО"
-author: kira
+permalink: /archive/
+date: 2026-08-07
+telegram_post: minutka_media/338
 image: assets/images/og-preview.jpg
-permalink: /preview-8f3ak2/iskupili-krovyu/
+author: kira
 sitemap: false
 ---
 
