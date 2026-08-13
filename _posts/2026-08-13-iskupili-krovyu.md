@@ -4,7 +4,6 @@ title: "Искупили кровью: как осуждённые уходят 
 author: kira
 image: assets/images/og-preview.jpg
 permalink: /preview-8f3ak2/iskupili-krovyu/
-hidden: true
 sitemap: false
 ---
 
