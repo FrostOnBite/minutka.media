@@ -118,7 +118,7 @@
   .mm-card__src { display: inline-block; margin-top: 14px; font-size: 13px; font-weight: 600; color: var(--mm-teal); text-decoration: none; border-bottom: 1px solid var(--mm-teal); }
 
   .mm-zoom {
-    position: absolute; left: 26px; top: 50%; transform: translateY(-50%);
+    position: absolute; left: 150px; top: 50%; transform: translateY(-50%);
     display: flex; flex-direction: column; align-items: center; gap: 0;
     z-index: 20;
   }
@@ -213,7 +213,7 @@
     {
       id: "kiyko-2026", name: "Андрей Кийко", nick: "«сосновский маньяк»",
       region: "Ленинградская область (Ропша)", lat: 59.749, lng: 29.906,
-      avatar: "", convicted: "2008",
+      avatar: "/assets/images/maniacs/kiyko.jpg", convicted: "2008",
       crimeShort: "3 убийства, 9 разбойных нападений, 12 изнасилований", victims: "3 убийства",
       status: "fled", statusLabel: "сбежал с фронта",
       story: "Осуждён в 2008 году. В 2024-м заключил контракт с Минобороны РФ и убыл из колонии на фронт. По сообщениям СМИ, весной 2026 года числился в розыске в Ленобласти.",
@@ -223,7 +223,7 @@
     {
       id: "tatarintsev-2023", name: "Евгений Татаринцев", nick: "",
       region: "Калужская область (Калуга)", lat: 54.513, lng: 36.261,
-      avatar: "", convicted: "—", crimeShort: "убийство", victims: "1",
+      avatar: "/assets/images/maniacs/tatarintsev.jpg", convicted: "—", crimeShort: "убийство", victims: "1",
       status: "released", statusLabel: "освобождён, живёт в Калуге",
       story: "Осуждён за убийство. Подписал контракт с ЧВК «Вагнер», по окончании полугодового контракта получил помилование и вернулся в Калугу.",
       sourceName: "Freedom / uatv.ua",
@@ -232,7 +232,7 @@
     {
       id: "gorin-2024", name: "Денис Горин", nick: "маньяк-людоед",
       region: "Сахалинская область", lat: 46.959, lng: 142.738,
-      avatar: "", convicted: "—", crimeShort: "убийство со следами каннибализма (по данным СМИ)", victims: "1",
+      avatar: "/assets/images/maniacs/gorin.jpg", convicted: "—", crimeShort: "убийство со следами каннибализма (по данным СМИ)", victims: "1",
       status: "released", statusLabel: "помилован, освобождён",
       story: "По данным «Новой газеты», помилован и освобождён для участия в военных действиях. Взыскание выплат родственникам погибшей было приостановлено.",
       sourceName: "Новая газета",
@@ -241,13 +241,14 @@
     {
       id: "malyshev-2024", name: "Малышев (Волгоградская область)", nick: "",
       region: "Волгоградская область", lat: 48.708, lng: 44.517,
-      avatar: "", convicted: "приговор — 25 лет", crimeShort: "убийство, участие в ОПГ", victims: "3 (по данным СМИ)",
+      avatar: "/assets/images/maniacs/malyshev.jpg", convicted: "приговор — 25 лет", crimeShort: "убийство, участие в ОПГ", victims: "3 (по данным СМИ)",
       status: "fled", statusLabel: "убыл на фронт",
       story: "Приговорён к 25 годам колонии особого режима. Не отбыл и половины срока — подписал контракт с Минобороны РФ и убыл на фронт.",
       sourceName: "Charter97",
       sourceUrl: "https://charter97.org/ru/news/2024/6/26/600420/"
     }
   ];
+
 
   const NS = 'http://www.w3.org/2000/svg';
   const PERSON_ICON_PATH = 'M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.3 0-9.8 1.6-9.8 4.9v2.4h19.6v-2.4c0-3.3-6.5-4.9-9.8-4.9z';
