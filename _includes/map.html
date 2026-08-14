@@ -255,46 +255,9 @@
 
   const STATUS_COLOR = { released: "#03a87c", fled: "#c67c2e", dead: "#9a9a9a", returned: "#212529" };
 
-  // avatar — путь к фото (например /assets/images/maniacs/kiyko.jpg). Пусто = заглушка-силуэт.
-  const CASES = [
-    {
-      id: "kiyko-2026", name: "Андрей Кийко", nick: "«сосновский маньяк»",
-      region: "Ленинградская область (Ропша)", lat: 59.749, lng: 29.906,
-      avatar: "/assets/images/maniacs/kiyko.jpg", convicted: "2008",
-      crimeShort: "3 убийства, 9 разбойных нападений, 12 изнасилований", victims: "3 убийства",
-      status: "fled", statusLabel: "сбежал с фронта",
-      story: "Осуждён в 2008 году. В 2024-м заключил контракт с Минобороны РФ и убыл из колонии на фронт. По сообщениям СМИ, весной 2026 года числился в розыске в Ленобласти.",
-      sourceName: "Радио Свобода",
-      sourceUrl: "https://www.svoboda.org/a/vypuschennye-na-voynu-ubiytsy-sbegayut-s-fronta-i-nahodyat-novyh-zhertv/33768063.html"
-    },
-    {
-      id: "tatarintsev-2023", name: "Евгений Татаринцев", nick: "",
-      region: "Калужская область (Калуга)", lat: 54.513, lng: 36.261,
-      avatar: "/assets/images/maniacs/tatarintsev.jpg", convicted: "—", crimeShort: "убийство", victims: "1",
-      status: "released", statusLabel: "освобождён, живёт в Калуге",
-      story: "Осуждён за убийство. Подписал контракт с ЧВК «Вагнер», по окончании полугодового контракта получил помилование и вернулся в Калугу.",
-      sourceName: "Freedom / uatv.ua",
-      sourceUrl: "https://uatv.ua/serijnye-ubijtsy-vyhodyat-na-svobodu-zachem-kreml-pomiloval-nasilnikov-i-manyakov/"
-    },
-    {
-      id: "gorin-2024", name: "Денис Горин", nick: "маньяк-людоед",
-      region: "Сахалинская область", lat: 46.959, lng: 142.738,
-      avatar: "/assets/images/maniacs/gorin.jpg", convicted: "—", crimeShort: "убийство со следами каннибализма (по данным СМИ)", victims: "1",
-      status: "released", statusLabel: "помилован, освобождён",
-      story: "По данным «Новой газеты», помилован и освобождён для участия в военных действиях. Взыскание выплат родственникам погибшей было приостановлено.",
-      sourceName: "Новая газета",
-      sourceUrl: "https://novayagazeta.ru/articles/2026/06/15/gvozdi-zabil-v-glaza"
-    },
-    {
-      id: "malyshev-2024", name: "Малышев (Волгоградская область)", nick: "",
-      region: "Волгоградская область", lat: 48.708, lng: 44.517,
-      avatar: "/assets/images/maniacs/malyshev.jpg", convicted: "приговор — 25 лет", crimeShort: "убийство, участие в ОПГ", victims: "3 (по данным СМИ)",
-      status: "fled", statusLabel: "убыл на фронт",
-      story: "Приговорён к 25 годам колонии особого режима. Не отбыл и половины срока — подписал контракт с Минобороны РФ и убыл на фронт.",
-      sourceName: "Charter97",
-      sourceUrl: "https://charter97.org/ru/news/2024/6/26/600420/"
-    }
-  ];
+  // Досье подтягивается из /_data/maniacs.csv (Jekyll сам парсит CSV в JSON на этапе сборки).
+  // Ничего в этом файле менять не нужно — просто редактируйте CSV.
+  const CASES = {{ site.data.maniacs | jsonify }};
 
 
   const NS = 'http://www.w3.org/2000/svg';
