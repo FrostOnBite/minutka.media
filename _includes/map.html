@@ -28,7 +28,15 @@
     background: #fff;
     overflow: hidden;
   }
-  #mm-svg { position:absolute !important; left:0 !important; top:0 !important; bottom:0 !important; width: 82% !important; height: 100% !important; max-width: none !important; max-height: none !important; display: block !important; }
+  /* ЕДИНЫЙ ПАРАМЕТР сдвига карты: отрицательные значения — влево, положительные — вправо.
+     Можно в %% (от ширины поля карты) или в px — что удобнее. */
+  #mm-root { --mm-map-shift: -8%; }
+  #mm-svg {
+    position:absolute !important; inset:0 !important;
+    width: 100% !important; height: 100% !important;
+    max-width: none !important; max-height: none !important; display: block !important;
+    transform: translateX(var(--mm-map-shift));
+  }
   #mm-svg .mm-land { fill: #d7dade; stroke: #b7bcc2; stroke-width: 0.7; }
 
   .mm-pin { cursor: pointer; }
@@ -63,9 +71,9 @@
     position: absolute; top: 50%; right: 18px;
     width: min(340px, 82%);
     max-height: calc(100% - 36px);
-    background: #fff;
-    border-radius: 14px;
-    box-shadow: 0 16px 40px rgba(0,0,0,.35);
+    background: #000;
+    border-radius: 0;
+    box-shadow: 0 16px 40px rgba(0,0,0,.5);
     transform: translateY(-50%) translateX(24px) scale(.96);
     opacity: 0;
     transition: transform .22s ease, opacity .22s ease;
@@ -84,32 +92,32 @@
 
   .mm-drawer-close {
     position: absolute; top: 12px; right: 12px;
-    width: 34px; height: 34px; border-radius: 50%;
-    border: none; background: rgba(0,0,0,.5); color: #fff;
+    width: 32px; height: 32px; border-radius: 0;
+    border: 1px solid rgba(255,255,255,.4); background: rgba(0,0,0,.6); color: #fff;
     font-size: 20px; line-height: 1; cursor: pointer;
     display: flex; align-items: center; justify-content: center;
     z-index: 2;
   }
-  .mm-drawer-close:hover { background: rgba(0,0,0,.7); }
+  .mm-drawer-close:hover { background: #fff; color: #000; }
 
-  .mm-drawer-photo, .mm-drawer-photo-fallback { width: 100%; height: 130px; border-radius: 14px 14px 0 0; }
+  .mm-drawer-photo, .mm-drawer-photo-fallback { width: 100%; height: 130px; border-radius: 0; }
   .mm-drawer-photo { object-fit: cover; display: block; }
-  .mm-drawer-photo-fallback { display: flex; align-items: center; justify-content: center; background: #e2e5e8; }
+  .mm-drawer-photo-fallback { display: flex; align-items: center; justify-content: center; background: #1a1a1a; }
 
-  .mm-card-body { padding: 14px 18px 18px; background: var(--mm-mint); border-radius: 0 0 14px 14px; }
-  .mm-card__case { font-size: 11.5px; letter-spacing: .02em; color: #4d6b5b; text-transform: uppercase; font-weight: 600; }
-  .mm-card__name { font-size: 20px; font-weight: 800; color: var(--mm-ink); margin: 5px 0 9px; line-height: 1.2; }
+  .mm-card-body { padding: 14px 18px 18px; background: #000; border-radius: 0; }
+  .mm-card__case { font-size: 11.5px; letter-spacing: .02em; color: #9a9a9a; text-transform: uppercase; font-weight: 600; }
+  .mm-card__name { font-size: 20px; font-weight: 800; color: #fff; margin: 5px 0 9px; line-height: 1.2; }
   .mm-card__badge { display: inline-flex; align-items: center; gap: 5px; font-size: 11.5px; font-weight: 700; padding: 3px 10px 3px 8px; border-radius: 20px; color: #fff; margin-bottom: 12px; }
   .mm-card__badge i { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,.9); display: inline-block; }
-  .mm-card__row { font-size: 13.5px; margin: 5px 0; line-height: 1.5; }
-  .mm-card__row b { font-weight: 700; }
-  .mm-card__story { font-size: 13.5px; line-height: 1.62; margin-top: 10px; color: #2b2f31; }
+  .mm-card__row { font-size: 13.5px; margin: 5px 0; line-height: 1.5; color: #d8d8d8; }
+  .mm-card__row b { font-weight: 700; color: #fff; }
+  .mm-card__story { font-size: 13.5px; line-height: 1.62; margin-top: 10px; color: #c2c2c2; }
   .mm-card__src { display: inline-block; margin-top: 14px; font-size: 13px; font-weight: 600; color: var(--mm-teal); text-decoration: none; border-bottom: 1px solid var(--mm-teal); }
 </style>
 
 <div id="mm-root">
   <div class="mm-map-wrap">
-    <svg id="mm-svg" viewBox="0 0 1000 550" preserveAspectRatio="xMinYMid meet" xmlns="http://www.w3.org/2000/svg">
+    <svg id="mm-svg" viewBox="0 0 1000 550" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <clipPath id="mm-avatar-clip"><circle cx="0" cy="0" r="10"/></clipPath>
       </defs>
@@ -230,7 +238,7 @@
     body.className = 'mm-card-body';
     body.innerHTML = `
       <div class="mm-card__case">Дело · ${c.region}</div>
-      <div class="mm-card__name">${c.name}${c.nick ? ' <span style="font-weight:400;color:#4d6b5b">— ' + c.nick + '</span>' : ''}</div>
+      <div class="mm-card__name">${c.name}${c.nick ? ' <span style="font-weight:400;color:#9a9a9a">— ' + c.nick + '</span>' : ''}</div>
       <span class="mm-card__badge" style="background:${color}"><i></i>${c.statusLabel}</span>
       <div class="mm-card__row"><b>Осуждён:</b> ${c.convicted}</div>
       <div class="mm-card__row"><b>Статьи/эпизоды:</b> ${c.crimeShort}</div>
