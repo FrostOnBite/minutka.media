@@ -71,7 +71,7 @@
   .mm-drawer-backdrop.mm-open { opacity: 1; pointer-events: auto; }
 
   .mm-drawer {
-    position: absolute; top: 50%; right: 18px;
+    position: absolute; top: 50%; right: 100px;
     width: min(340px, 82%);
     max-height: calc(100% - 36px);
     background: #000;
@@ -94,7 +94,7 @@
 
   /* ---- дефолтная карточка-обложка (пока попап не открыт) ---- */
   .mm-cover {
-    position: absolute; top: 50%; right: 18px;
+    position: absolute; top: 50%; right: 100px;
     width: min(340px, 82%);
     max-height: calc(100% - 36px);
     background: #000;
@@ -110,6 +110,7 @@
   .mm-cover-eyebrow { font-size: 11px; letter-spacing: .04em; text-transform: uppercase; color: #9a9a9a; margin-bottom: 8px; }
   .mm-cover-title { font-size: 21px; font-weight: 800; line-height: 1.25; margin-bottom: 14px; }
   .mm-cover-count { display: inline-block; font-size: 12.5px; font-weight: 700; color: var(--mm-teal); border: 1px solid var(--mm-teal); padding: 3px 10px; margin-bottom: 20px; }
+  .mm-cover-desc { font-size: 12.5px; line-height: 1.55; color: #c2c2c2; margin: 0 0 16px; }
   .mm-cover-divider { border-top: 1px solid #333; margin: 0 0 16px; }
   .mm-cover-byline img { filter: grayscale(1); }
   .mm-cover-byline small { color: #d8d8d8; font-size: 13px; line-height: 1.5; }
@@ -206,6 +207,7 @@
       <div class="mm-cover-eyebrow">«Минутка» · спецпроект</div>
       <div class="mm-cover-title">{{ page.title }}</div>
       <div class="mm-cover-count">дел в досье: <span id="mm-cover-count-num">0</span></div>
+      <p class="mm-cover-desc">Интерактивная карта осуждённых, которых государство отправило на СВО в обмен на свободу. Каждая точка — конкретный человек и его история. Кликните по фото, чтобы открыть карточку с деталями дела и источником. Карту можно приближать и двигать: зум — слева, курсором или пальцем можно потащить саму карту в любую сторону.</p>
       <div class="mm-cover-divider"></div>
       <div class="mm-cover-byline d-flex align-items-center">
         {% if author.avatar %}
