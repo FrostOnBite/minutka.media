@@ -311,6 +311,10 @@ a.text-dark:hover {
         line-height: 1.5;
     }
 }
+.jumbotron-home {
+    padding-left: 15px;
+    padding-right: 15px;
+}
 .bg-black {
 	background-color:#000;
 }
