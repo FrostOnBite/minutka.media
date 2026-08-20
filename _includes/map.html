@@ -158,31 +158,12 @@
   }
   .mm-zoom button:hover { background: #262626; }
   .mm-zoom button:disabled { cursor: default; }
-  .mm-zoom-track {
-    position: relative;
-    width: 2px; height: 84px;
-    background: #000;
-    margin: 6px 0;
-    cursor: pointer;
-  }
-  .mm-zoom-handle {
-    position: absolute; left: 50%;
-    width: 16px; height: 3px;
-    background: #000;
-    transform: translate(-50%, -50%);
-    cursor: grab;
-    touch-action: none;
-  }
-  .mm-zoom-handle:active { cursor: grabbing; }
 </style>
 
 <div id="mm-root">
   <div class="mm-map-wrap">
     <div class="mm-zoom">
       <button type="button" id="mm-zoom-in" aria-label="Приблизить">+</button>
-      <div class="mm-zoom-track" id="mm-zoom-track">
-        <div class="mm-zoom-handle" id="mm-zoom-handle"></div>
-      </div>
       <button type="button" id="mm-zoom-out" aria-label="Отдалить">−</button>
     </div>
     <svg id="mm-svg" viewBox="0 0 1000 550" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
@@ -267,8 +248,6 @@
   const zoomGroup = document.getElementById('mm-zoom-group');
   const zoomInBtn = document.getElementById('mm-zoom-in');
   const zoomOutBtn = document.getElementById('mm-zoom-out');
-  const zoomTrack = document.getElementById('mm-zoom-track');
-  const zoomHandle = document.getElementById('mm-zoom-handle');
   const ZOOM_MIN = 1, ZOOM_MAX = 3, ZOOM_STEP = 0.4;
   let zoomLevel = 1;
   const cx = BOUNDS.VB_W / 2, cy = BOUNDS.VB_H / 2;
@@ -288,38 +267,10 @@
     zoomGroup.setAttribute('transform', `translate(${panX},${panY}) translate(${cx},${cy}) scale(${zoomLevel}) translate(${-cx},${-cy})`);
     zoomInBtn.disabled = zoomLevel >= ZOOM_MAX;
     zoomOutBtn.disabled = zoomLevel <= ZOOM_MIN;
-    // ползунок: наверху трека — максимальный зум (у кнопки +), внизу — минимальный (у кнопки -)
-    const fraction = (zoomLevel - ZOOM_MIN) / (ZOOM_MAX - ZOOM_MIN); // 0..1
-    const trackH = zoomTrack.clientHeight;
-    zoomHandle.style.top = ((1 - fraction) * trackH) + 'px';
-  }
-
-  function setZoomFromClientY(clientY) {
-    const rect = zoomTrack.getBoundingClientRect();
-    let fraction = 1 - (clientY - rect.top) / rect.height;
-    fraction = Math.max(0, Math.min(1, fraction));
-    zoomLevel = +(ZOOM_MIN + fraction * (ZOOM_MAX - ZOOM_MIN)).toFixed(2);
-    applyZoom();
   }
 
   zoomInBtn.addEventListener('click', () => { zoomLevel = Math.min(ZOOM_MAX, +(zoomLevel + ZOOM_STEP).toFixed(2)); applyZoom(); });
   zoomOutBtn.addEventListener('click', () => { zoomLevel = Math.max(ZOOM_MIN, +(zoomLevel - ZOOM_STEP).toFixed(2)); applyZoom(); });
-
-  zoomTrack.addEventListener('click', (e) => { if (e.target === zoomTrack) setZoomFromClientY(e.clientY); });
-
-  let dragging = false;
-  zoomHandle.addEventListener('pointerdown', (e) => {
-    dragging = true;
-    zoomHandle.setPointerCapture(e.pointerId);
-  });
-  zoomHandle.addEventListener('pointermove', (e) => {
-    if (!dragging) return;
-    setZoomFromClientY(e.clientY);
-  });
-  zoomHandle.addEventListener('pointerup', (e) => {
-    dragging = false;
-    zoomHandle.releasePointerCapture(e.pointerId);
-  });
 
   applyZoom();
 
