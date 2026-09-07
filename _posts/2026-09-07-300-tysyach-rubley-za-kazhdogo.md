@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "«300 тысяч рублей за каждого»: кто вербует россиян на контракт и при чем здесь бывший руководитель фонда помощи детям"
-telegram_post: minutka_media/343
+telegram_post: minutka_media/387
 author: adelina
 image: /assets/images/2026-09-07-photo-3.jpg
 ---
