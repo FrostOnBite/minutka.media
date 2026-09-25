@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Медведи-людоеды или халатность региональных властей? Как хищники вышли к людям, а жители Красноярского края остались один на один с ними."
-telegram_post: 
+telegram_post: minutka_media/409
 author: kira
 image: /assets/images/2026-09-25-photo-0.jpg
 ---
