@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Чума в Иркутске: что скрывается за смертью сотрудницы противочумного института"
-telegram_post: minutka_media/409
+telegram_post: minutka_media/422
 author: kira
 image: /assets/images/2026-10-06-photo-0.jpg
 ---
