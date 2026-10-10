@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Две смерти в «Алабуге»: травля, армейская дисциплина и давление на семью погибшего подростка"
-telegram_post: minutka_media/422
+telegram_post: minutka_media/427
 author: kira
 image: /assets/images/2026-10-10-photo-0.jpg
 ---
