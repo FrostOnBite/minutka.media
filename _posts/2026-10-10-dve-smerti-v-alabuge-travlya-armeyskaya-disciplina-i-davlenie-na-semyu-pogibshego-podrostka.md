@@ -72,10 +72,3 @@ image: /assets/images/2026-10-10-photo-0.jpg
 На фоне сообщения о давлении следователей на семью эта перемена требует особого внимания. Вместо открытых ответов о том, в каких условиях несовершеннолетние учатся и работают на производстве беспилотников, общественность получает взаимоисключающие заявления и новые вопросы к расследованию.
 
 [Подробнее об «Алабуге» — в материале «Эха».](https://storage.googleapis.com/rdt/echo#/news/alabuga-politeh-pytaetsya-privlekat-vsyo-bolshe-novyh-studentov-eto-mozhet-byt-svyazano-s-planami-rasshirit-proizvodstvo)
-
-
-
-![Убитая 8-месячная Елена Майборода]({{site.baseurl}}/assets/images/2026-10-07-photo-2.jpg)
-*Убитая 8-месячная Елена Майборода*
-{: .text-muted }
-
