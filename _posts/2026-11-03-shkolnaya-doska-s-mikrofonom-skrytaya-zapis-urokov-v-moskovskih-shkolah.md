@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "«Школьная доска с микрофоном»: в московских школах обнаружили программу для скрытой записи уроков"
-telegram_post: minutka_media/427
+telegram_post: minutka_media/453
 author: kira
 image: /assets/images/mostech-panel.jpg
 ---
