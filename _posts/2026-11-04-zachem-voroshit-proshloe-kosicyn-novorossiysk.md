@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "«Зачем ворошить прошлое»: экс-полицейский, осуждённый за нападения на 27 женщин, сменил фамилию и живёт в Новороссийске"
-telegram_post: minutka_media/453
+telegram_post: minutka_media/456
 author: kira
 image: /assets/images/2026-11-04-photo-0.jpg
 ---
